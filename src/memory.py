@@ -1,6 +1,7 @@
 import os
 import json
 import datetime
+from zoneinfo import ZoneInfo
 from src.db import get_db, using_fallback, is_db_connected
 from src.security import encrypt_data, decrypt_data, log_security_event
 
@@ -100,7 +101,7 @@ def ensure_fallback_files(patient_id):
             
     # 2. History Seeding (7 days of encrypted data)
     if not os.path.exists(history_path):
-        today = datetime.date.today()
+        today = datetime.datetime.now(ZoneInfo("Asia/Kolkata")).date()
         history_records = []
         
         if patient_id == "arthur_78":
@@ -202,8 +203,10 @@ def ensure_fallback_files(patient_id):
         with open(events_path, "w") as f:
             json.dump({"events": []}, f, indent=2)
 
-def get_patient_profiles() -> list:
-    """Retrieve all patient profile headers for selection."""
+def get_patient_profiles(username: str | None = None) -> list:
+    """Retrieve patient profile headers for selection, filtered by username if provided."""
+    is_demo_user = (not username or username.strip().lower() in ["caregiver", "sarah", "nurse", "admin"])
+
     if not using_fallback():
         db = get_db()
         try:
@@ -211,16 +214,22 @@ def get_patient_profiles() -> list:
             patients = []
             for doc in cursor:
                 doc.pop("_id", None)
-                patients.append(doc)
-            return patients
+                created_by = doc.get("created_by")
+                if is_demo_user:
+                    patients.append(doc)
+                else:
+                    if created_by == username:
+                        patients.append(doc)
+            return sorted(patients, key=lambda x: x.get("name", ""))
         except Exception as e:
             print(f"[MongoDB] Error loading patient list: {e}. Falling back.")
             
     # Local fallback patient scanning
     local_patients = []
-    ensure_fallback_files("arthur_78")
-    ensure_fallback_files("eleanor_82")
-    ensure_fallback_files("anj_86")
+    if is_demo_user:
+        ensure_fallback_files("arthur_78")
+        ensure_fallback_files("eleanor_82")
+        ensure_fallback_files("anj_86")
     
     try:
         import glob
@@ -230,21 +239,30 @@ def get_patient_profiles() -> list:
                 with open(f, "r") as pf:
                     pdata = json.load(pf)
                     p_id = os.path.basename(f).replace("care_plan_", "").replace(".json", "")
-                    local_patients.append({
-                        "patient_id": p_id,
-                        "name": pdata.get("patient_name", "Unknown"),
-                        "age": pdata.get("age", ""),
-                        "relationship": pdata.get("relationship", "Family"),
-                        "conditions": pdata.get("conditions", "")
-                    })
+                    created_by = pdata.get("created_by")
+                    if is_demo_user:
+                        local_patients.append({
+                            "patient_id": p_id,
+                            "name": pdata.get("patient_name", "Unknown"),
+                            "age": pdata.get("age", ""),
+                            "relationship": pdata.get("relationship", "Family"),
+                            "conditions": pdata.get("conditions", "")
+                        })
+                    else:
+                        if created_by == username:
+                            local_patients.append({
+                                "patient_id": p_id,
+                                "name": pdata.get("patient_name", "Unknown"),
+                                "age": pdata.get("age", ""),
+                                "relationship": pdata.get("relationship", "Family"),
+                                "conditions": pdata.get("conditions", "")
+                            })
             except Exception:
                 pass
     except Exception:
         pass
         
-    if local_patients:
-        # Sort by patient name
-        return sorted(local_patients, key=lambda x: x.get("name", ""))
+    return sorted(local_patients, key=lambda x: x.get("name", ""))
         
 def delete_patient_profile(patient_id: str) -> bool:
     """Delete a patient profile and their associated data (Mongo or fallback files)."""
@@ -344,7 +362,8 @@ def save_care_plan(patient_id: str, plan: dict):
                     "age": plan.get("age"),
                     "conditions": plan.get("conditions", ""),
                     "preferences": plan.get("preferences", []),
-                    "daily_routine": plan.get("daily_routine", [])
+                    "daily_routine": plan.get("daily_routine", []),
+                    "created_by": plan.get("created_by")
                 }},
                 upsert=True
             )
@@ -460,7 +479,7 @@ def get_history_range(patient_id: str, end_date_str: str, days=7):
     try:
         end_date = datetime.datetime.strptime(end_date_str, "%Y-%m-%d")
     except ValueError:
-        end_date = datetime.datetime.today()
+        end_date = datetime.datetime.now(ZoneInfo("Asia/Kolkata"))
         
     dates = [(end_date - datetime.timedelta(days=i)).strftime("%Y-%m-%d") for i in range(days)]
     
@@ -489,8 +508,8 @@ def get_history_range(patient_id: str, end_date_str: str, days=7):
 
 def log_agent_event(patient_id: str, agent_name: str, action: str):
     """Logs an agent activity to MongoDB or JSON fallback."""
-    date_str = datetime.date.today().strftime("%Y-%m-%d")
-    timestamp = datetime.datetime.now().strftime("%H:%M")
+    date_str = datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%Y-%m-%d")
+    timestamp = datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
     event_doc = {
         "patient_id": patient_id,
         "date": date_str,
@@ -550,7 +569,7 @@ def log_pipeline_execution(patient_id: str, date_str: str, trace_logs: dict):
     trace_doc = {
         "patient_id": patient_id,
         "date": date_str,
-        "timestamp": datetime.datetime.now().isoformat(),
+        "timestamp": datetime.datetime.now(ZoneInfo("Asia/Kolkata")).isoformat(),
         "trace": trace_logs
     }
     

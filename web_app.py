@@ -78,6 +78,7 @@ class PatientRequest(BaseModel):
     conditions: str
     preferences: list[str] = []
     daily_routine: list[dict] = []
+    created_by: str | None = None
 
 
 class ConfigRequest(BaseModel):
@@ -482,8 +483,8 @@ def handoff_pdf(patient_id: str = "ananya_78", date: str | None = None) -> FileR
 
 
 @app.get("/api/patients")
-def get_patients() -> list[dict[str, Any]]:
-    return get_patient_profiles()
+def get_patients(username: str | None = None) -> list[dict[str, Any]]:
+    return get_patient_profiles(username)
 
 
 @app.get("/api/pipeline-logs")
@@ -518,7 +519,8 @@ def create_patient(payload: PatientRequest) -> dict[str, Any]:
         "relationship": payload.relationship,
         "conditions": payload.conditions,
         "preferences": payload.preferences,
-        "daily_routine": payload.daily_routine
+        "daily_routine": payload.daily_routine,
+        "created_by": payload.created_by
     }
     save_care_plan(payload.patient_id, plan)
     ensure_fallback_files(payload.patient_id)

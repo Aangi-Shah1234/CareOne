@@ -169,7 +169,8 @@ function showView(viewName) {
 // 2. Patient Directory (Portal Hub)
 async function loadPatients() {
   try {
-    const list = await api("/api/patients");
+    const username = state.user ? state.user.username : "";
+    const list = await api(`/api/patients?username=${encodeURIComponent(username)}`);
     state.patients = list;
     renderPatientDirectory(list);
     updatePatientSelectors(list);
@@ -2010,7 +2011,8 @@ async function handleRegisterPatient(event) {
         relationship: $("#reg-relationship").value,
         conditions: $("#reg-conditions").value,
         preferences: prefs,
-        daily_routine: routine
+        daily_routine: routine,
+        created_by: state.user ? state.user.username : ""
       }),
     });
     

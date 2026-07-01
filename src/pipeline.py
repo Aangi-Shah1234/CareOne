@@ -1,4 +1,5 @@
 import datetime
+from zoneinfo import ZoneInfo
 import json
 import time
 from src.memory import (
@@ -64,7 +65,7 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
     # Trace log for observability
     trace_logs = {
         "pipeline_metadata": {
-            "timestamp": datetime.datetime.now().isoformat(),
+            "timestamp": datetime.datetime.now(ZoneInfo("Asia/Kolkata")).isoformat(),
             "patient_id": patient_id,
             "date_processed": date_str,
             "caregiver": caregiver_name or "System Refresh",
@@ -102,7 +103,7 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
             day_record["raw_notes"].append({
                 "caregiver": caregiver_name,
                 "text": f"[BLOCKED QUERY] {raw_note}",
-                "timestamp": datetime.datetime.now().strftime("%H:%M")
+                "timestamp": datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
             })
             day_record["summary"] = {
                 "executive_summary": safety_msg,
@@ -121,7 +122,7 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
         day_record["raw_notes"].append({
             "caregiver": caregiver_name,
             "text": raw_note,
-            "timestamp": datetime.datetime.now().strftime("%H:%M")
+            "timestamp": datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
         })
 
         # 2. Parse Events
@@ -153,7 +154,7 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
         new_vitals = vitals_res.get("readings", [])
         for vital in new_vitals:
             vital["caregiver"] = caregiver_name
-            vital["timestamp"] = datetime.datetime.now().strftime("%H:%M")
+            vital["timestamp"] = datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
             day_record["vitals"].append(vital)
             log_agent_event(patient_id, "Vitals Agent", f"{vital['vital_type']} {vital['value_raw']} logged — status: {vital['status']}")
 
@@ -162,7 +163,7 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
             vital_event = {
                 "activity": "Medical check",
                 "time_raw": "at check-in",
-                "inferred_time": datetime.datetime.now().strftime("%H:%M"),
+                "inferred_time": datetime.datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M"),
                 "status": "Completed",
                 "notes": f"Measured {vital['vital_type']}: {vital['value_raw']} (Status: {vital['status']} - {vital['explanation']})",
                 "caregiver": caregiver_name
