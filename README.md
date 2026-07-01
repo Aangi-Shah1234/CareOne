@@ -1,4 +1,4 @@
-# CareOne 🩺
+# CareOne
 ### Clinical-Grade Multi-Agent Care Coordination & Longitudinal Analytics
 *Kaggle AI Agents Capstone Project — "Agents for Good" (Healthcare/Caregiving) Track*
 
@@ -16,13 +16,13 @@ It orchestrates a specialized **8-Agent Pipeline** powered by `gemini-2.5-flash`
 
 ## 2. Core Features
 
-* 🩺 **8-Agent Clinical Orchestration**: Employs Pydantic structured output schemas via the Google GenAI SDK to cascade clinical reasoning and metrics down a pipeline of specialized agents (Parser, Vitals, Reconciler, Refusal, Gaps, Risk, Trends, Summary).
-* 🔒 **PHI Symmetrical Encryption**: Symmetrically encrypts all patient notes, vitals, and logs at rest using AES-based Fernet cryptography (`cryptography.fernet`) to guarantee HIPAA compliance.
-* 📈 **Longitudinal Analytics**: Renders interactive SVG-based charts tracking patient wellness indicators (Routine Adherence, BP trends, Heart Rate, Fluid Intake, Medication Adherence, and computed Safety Risk Index).
-* 📱 **Fluid Responsiveness**: Premium glassmorphism design fully optimized for all viewports (from 1920px Desktop down to 320px mobile screens) with no overflow.
-* 🔑 **Full Auth Suite & Reset**: Secure registration, login, logout, and password reset syncing live to MongoDB Atlas.
-* 📁 **Clinical Handoff Exports**: Instantly compiles patient logs and shift records into printable PDFs and styled Microsoft Word document reports (`.doc`).
-* ⚙️ **Robust DB Fallback**: Seamlessly connects to MongoDB Atlas with an automated local JSON fallback when offline.
+* **8-Agent Clinical Orchestration**: Employs Pydantic structured output schemas via the Google GenAI SDK to cascade clinical reasoning and metrics down a pipeline of specialized agents (Parser, Vitals, Reconciler, Refusal, Gaps, Risk, Trends, Summary).
+* **PHI Symmetrical Encryption**: Symmetrically encrypts all patient notes, vitals, and logs at rest using AES-based Fernet cryptography (`cryptography.fernet`) to guarantee HIPAA compliance.
+* **Longitudinal Analytics**: Renders interactive SVG-based charts tracking patient wellness indicators (Routine Adherence, BP trends, Heart Rate, Fluid Intake, Medication Adherence, and computed Safety Risk Index).
+* **Fluid Responsiveness**: Premium glassmorphism design fully optimized for all viewports (from 1920px Desktop down to 320px mobile screens) with no overflow.
+* **Full Auth Suite & Reset**: Secure registration, login, logout, and password reset syncing live to MongoDB Atlas.
+* **Clinical Handoff Exports**: Instantly compiles patient logs and shift records into printable PDFs and styled Microsoft Word document reports (`.doc`).
+* **Robust DB Fallback**: Seamlessly connects to MongoDB Atlas with an automated local JSON fallback when offline.
 
 ---
 
@@ -82,10 +82,13 @@ It orchestrates a specialized **8-Agent Pipeline** powered by `gemini-2.5-flash`
 ## 5. Screenshots
 
 ### Platform Landing Hub
-![Platform Landing](docs/screenshots/hero_illustration_1782832938263.png)
+![Platform Landing](docs/screenshots/landing_hero.png)
 
-### Sign In & Authentication
-![Sign In Page](docs/screenshots/login_illustration_1782484375992.png)
+### Trusted Care Circles Section
+![Landing Testimonials](docs/screenshots/landing_testimonials.png)
+
+### Care Directory & Patient Profiles
+![Patient Directory](docs/screenshots/patient_directory.png)
 
 ---
 
@@ -147,7 +150,7 @@ python -m unittest test_pipeline.py
 
 ## 8. Future Roadmap
 
-* 💬 **AI SMS & WhatsApp Alerts**: Connect immediate gap alerts to Twilio or WhatsApp Business APIs to notify caregivers instantly on their mobile phones.
-* 🎙️ **Clinical Speech Transcription**: Enable voice-note transcription directly inside the caregiver input form using Gemini's audio-understanding capabilities.
-* 🔄 **HL7 / FHIR Integration**: Enable seamless sync with existing clinical EHR systems (Epic, Cerner) using standardized health records protocols.
-* 📡 **Offline-First Synchronization**: Build service workers that allow offline local cache modification when internet connections fail, syncing to Atlas automatically once re-established.
+* **AI SMS & WhatsApp Alerts**: Connect immediate gap alerts to Twilio or WhatsApp Business APIs to notify caregivers instantly on their mobile phones.
+* **Clinical Speech Transcription**: Enable voice-note transcription directly inside the caregiver input form using Gemini's audio-understanding capabilities.
+* **HL7 / FHIR Integration**: Enable seamless sync with existing clinical EHR systems (Epic, Cerner) using standardized health records protocols.
+* **Offline-First Synchronization**: Build service workers that allow offline local cache modification when internet connections fail, syncing to Atlas automatically once re-established.
