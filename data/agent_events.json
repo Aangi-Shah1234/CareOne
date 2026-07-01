@@ -1,0 +1,568 @@
+{
+  "events": [
+    {
+      "date": "2026-06-24",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "10:33"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "10:34"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-24",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "10:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:09"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:20"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:25"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:33"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Morning meds marked as completed",
+      "timestamp": "19:34"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:36"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request - out of scope",
+      "timestamp": "19:37"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:39"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "19:51"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request - out of scope",
+      "timestamp": "19:53"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Breakfast marked completed",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Breakfast marked skipped",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Breakfast marked skipped",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Breakfast marked skipped",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Breakfast marked skipped",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Morning Medications marked completed",
+      "timestamp": "19:54"
+    },
+    {
+      "date": "2026-06-26",
+      "agent_name": "Gaps Agent",
+      "action": "Checklist updated: Morning Medications marked skipped",
+      "timestamp": "19:54"
+    }
+  ]
+}

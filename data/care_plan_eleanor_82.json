@@ -1,0 +1,68 @@
+{
+  "patient_name": "Eleanor",
+  "age": 82,
+  "conditions": "Stage 3 Chronic Kidney Disease, Severe Hypertension",
+  "preferences": [
+    "Fluid restricted diet: Max 1500ml fluid intake daily.",
+    "Prefers low-sodium, low-potassium renal meals.",
+    "Prefers blood pressure measurement while seated in a quiet room."
+  ],
+  "daily_routine": [
+    {
+      "task_id": "bp_check",
+      "name": "BP Monitoring",
+      "time_expected": "08:00",
+      "category": "Vitals",
+      "importance": "High",
+      "description": "Measure and log blood pressure before breakfast."
+    },
+    {
+      "task_id": "renal_breakfast",
+      "name": "Renal Breakfast",
+      "time_expected": "08:30",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Low sodium oatmeal and egg whites."
+    },
+    {
+      "task_id": "renal_meds",
+      "name": "CKD Medications",
+      "time_expected": "09:00",
+      "category": "Medication",
+      "importance": "High",
+      "description": "Phosphate binders and renal vitamins."
+    },
+    {
+      "task_id": "fluid_check",
+      "name": "Fluid Intake Check",
+      "time_expected": "14:00",
+      "category": "Hydration",
+      "importance": "High",
+      "description": "Log running total of fluids. Ensure under 1500ml."
+    },
+    {
+      "task_id": "light_yoga",
+      "name": "Light Yoga/Stretching",
+      "time_expected": "17:00",
+      "category": "Exercise",
+      "importance": "Medium",
+      "description": "15 minutes of seated yoga for circulation."
+    },
+    {
+      "task_id": "renal_dinner",
+      "name": "Renal Dinner",
+      "time_expected": "19:00",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Grilled chicken breast, steamed green beans (leached)."
+    },
+    {
+      "task_id": "evening_bp_check",
+      "name": "Evening Vitals Check",
+      "time_expected": "21:00",
+      "category": "Vitals",
+      "importance": "High",
+      "description": "Measure blood pressure and administer night anti-hypertensive."
+    }
+  ]
+}

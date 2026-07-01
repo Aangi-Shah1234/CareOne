@@ -1,0 +1,345 @@
+[
+  {
+    "patient_id": "arthur_78",
+    "date": "2026-06-28",
+    "timestamp": "2026-06-28T10:07:11.769159",
+    "trace": {
+      "pipeline_metadata": {
+        "timestamp": "2026-06-28T10:07:11.380941",
+        "patient_id": "arthur_78",
+        "date_processed": "2026-06-28",
+        "caregiver": "Caregiver A",
+        "has_new_note": true
+      },
+      "parser": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Mapped caregiver note text to daily routine items based on keywords.",
+        "retrieved_memory": "None",
+        "output": {
+          "events": [
+            {
+              "activity": "Meal",
+              "time_raw": "lunch",
+              "inferred_time": "13:00",
+              "status": "Completed",
+              "notes": "Lunch was reported.",
+              "caregiver": "Caregiver A"
+            },
+            {
+              "activity": "Medication",
+              "time_raw": "morning meds",
+              "inferred_time": "09:00",
+              "status": "Delayed",
+              "notes": "Morning medications were reported.",
+              "caregiver": "Caregiver A"
+            },
+            {
+              "activity": "Exercise",
+              "time_raw": "exercise",
+              "inferred_time": "17:00",
+              "status": "Refused",
+              "notes": "Walk/exercise context logged.",
+              "caregiver": "Caregiver A"
+            },
+            {
+              "activity": "Medical check",
+              "time_raw": "at check-in",
+              "inferred_time": "10:07",
+              "status": "Completed",
+              "notes": "Measured Blood Pressure: 145/92 (Status: High/Alert - Blood pressure is elevated for an adult baseline.)",
+              "caregiver": "Caregiver A"
+            }
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Mapped caregiver note text to daily routine items based on keywords."
+        }
+      },
+      "vitals_validator": {
+        "duration_ms": 1,
+        "confidence_score": 0.98,
+        "reasoning_path": "Extracted numerical patterns matching blood pressure (SYS/DIA), glucose (mg/dL), and fluid intake (ml).",
+        "retrieved_memory": "None",
+        "output": {
+          "readings": [
+            {
+              "vital_type": "Blood Pressure",
+              "value_raw": "145/92",
+              "status": "High/Alert",
+              "explanation": "Blood pressure is elevated for an adult baseline.",
+              "caregiver": "Caregiver A",
+              "timestamp": "10:07"
+            }
+          ],
+          "confidence_score": 0.98,
+          "reasoning_path": "Extracted numerical patterns matching blood pressure (SYS/DIA), glucose (mg/dL), and fluid intake (ml)."
+        }
+      },
+      "reconciliation": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Merged incoming parsed caregiver logs with existing logs, checking for activity status overrides.",
+        "retrieved_memory": "None",
+        "output": {
+          "reconciled_events": [
+            {
+              "activity": "Meal",
+              "time_raw": "lunch",
+              "inferred_time": "13:00",
+              "status": "Completed",
+              "notes": "Lunch was reported.",
+              "caregivers": [
+                "Caregiver A"
+              ]
+            },
+            {
+              "activity": "Medication",
+              "time_raw": "morning meds",
+              "inferred_time": "09:00",
+              "status": "Delayed",
+              "notes": "Morning medications were reported.",
+              "caregivers": [
+                "Caregiver A"
+              ]
+            },
+            {
+              "activity": "Exercise",
+              "time_raw": "exercise",
+              "inferred_time": "17:00",
+              "status": "Refused",
+              "notes": "Walk/exercise context logged.",
+              "caregivers": [
+                "Caregiver A"
+              ]
+            },
+            {
+              "activity": "Medical check",
+              "time_raw": "at check-in",
+              "inferred_time": "10:07",
+              "status": "Completed",
+              "notes": "Measured Blood Pressure: 145/92 (Status: High/Alert - Blood pressure is elevated for an adult baseline.)",
+              "caregivers": [
+                "Caregiver A"
+              ]
+            }
+          ],
+          "conflicts": [],
+          "confidence_score": 0.95,
+          "reasoning_path": "Merged incoming parsed caregiver logs with existing logs, checking for activity status overrides."
+        }
+      },
+      "refusal_handler": {
+        "duration_ms": 0,
+        "confidence_score": 0.9,
+        "reasoning_path": "Detected task status 'Refused' and generated non-clinical compliance strategies.",
+        "retrieved_memory": "Retrieved 4 patient preferences.",
+        "output": {
+          "interventions": [],
+          "confidence_score": 0.9,
+          "reasoning_path": "Detected task status 'Refused' and generated non-clinical compliance strategies."
+        },
+        "safety_check": {
+          "is_medical_query": false,
+          "query_type": "none",
+          "explanation": "no medical advice request detected",
+          "confidence_score": 1.0,
+          "reasoning_path": "Checked text against disallowed clinical modification keywords: dosage, double dose, prescribe."
+        }
+      },
+      "gap_detector": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Compared daily routine schedule guidelines against reconciled completed events.",
+        "retrieved_memory": "None",
+        "output": {
+          "detected_gaps": [
+            {
+              "task_id": "breakfast",
+              "task_name": "Breakfast",
+              "category": "Meal",
+              "importance": "High",
+              "confidence_score": 0.95,
+              "explanation": "Breakfast is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "morning_meds",
+              "task_name": "Morning Medications",
+              "category": "Medication",
+              "importance": "High",
+              "confidence_score": 0.95,
+              "explanation": "Morning Medications is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "lunch",
+              "task_name": "Lunch",
+              "category": "Meal",
+              "importance": "High",
+              "confidence_score": 0.95,
+              "explanation": "Lunch is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "afternoon_hydration",
+              "task_name": "Afternoon Hydration",
+              "category": "Hydration",
+              "importance": "Medium",
+              "confidence_score": 0.85,
+              "explanation": "Afternoon Hydration is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "evening_walk",
+              "task_name": "Evening Walk",
+              "category": "Exercise",
+              "importance": "Medium",
+              "confidence_score": 0.95,
+              "explanation": "Evening Walk is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "dinner",
+              "task_name": "Dinner",
+              "category": "Meal",
+              "importance": "High",
+              "confidence_score": 0.95,
+              "explanation": "Dinner is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "evening_meds",
+              "task_name": "Evening Medications",
+              "category": "Medication",
+              "importance": "High",
+              "confidence_score": 0.95,
+              "explanation": "Evening Medications is unconfirmed in today's caregiver notes."
+            }
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Compared daily routine schedule guidelines against reconciled completed events."
+        }
+      },
+      "risk_assessment": {
+        "duration_ms": 0,
+        "confidence_score": 0.92,
+        "reasoning_path": "Analyzed vital indicators and daily routine gap logs for safety assessment.",
+        "retrieved_memory": "None",
+        "output": {
+          "risk_level": "Medium",
+          "description": "Systolic BP above 140 mmHg and unconfirmed medication tasks logged.",
+          "confidence_score": 0.92,
+          "reasoning_path": "Analyzed vital indicators and daily routine gap logs for safety assessment."
+        }
+      },
+      "trend_analyzer": {
+        "duration_ms": 9,
+        "confidence_score": 0.9,
+        "reasoning_path": "Scanned last 7 days of vitals records for patterns in systolic BP and fluid targets.",
+        "retrieved_memory": "Retrieved 5 days of historical logs.",
+        "output": {
+          "completion_rates": [],
+          "observed_trends": [
+            {
+              "trend_type": "Compliance",
+              "observation": "Fluid restriction warning triggered twice for Eleanor.",
+              "impact": "Exceeding fluid limits increases swelling risk."
+            }
+          ],
+          "summary_insight": "Elective trend analysis processed 7 days of logs. Fluid restrictions need stricter check-ins.",
+          "confidence_score": 0.9,
+          "reasoning_path": "Scanned last 7 days of vitals records for patterns in systolic BP and fluid targets."
+        }
+      },
+      "summary": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Synthesized summary metrics from timeline, gaps list, and vital warnings.",
+        "retrieved_memory": "None",
+        "output": {
+          "executive_summary": "All caregiver logs reconciled successfully. Care plan shows 0 unconfirmed task(s) remaining.",
+          "recommended_actions": [
+            "Review unconfirmed high-importance tasks before shift end.",
+            "Verify vital levels and consult the doctor for clinical concerns."
+          ],
+          "safety_alerts": [
+            "No critical care gaps detected."
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Synthesized summary metrics from timeline, gaps list, and vital warnings."
+        }
+      }
+    }
+  },
+  {
+    "patient_id": "arthur_78",
+    "date": "2026-06-24",
+    "timestamp": "2026-07-01T10:08:17.965692",
+    "trace": {
+      "pipeline_metadata": {
+        "timestamp": "2026-07-01T10:08:17.924867",
+        "patient_id": "arthur_78",
+        "date_processed": "2026-06-24",
+        "caregiver": "Caregiver A",
+        "has_new_note": true
+      },
+      "parser": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Skipped",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "vitals_validator": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Skipped",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "reconciliation": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Skipped",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "refusal_handler": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Unsafe clinical query intercepted.",
+        "retrieved_memory": "None",
+        "output": {},
+        "safety_check": {
+          "is_medical_query": true,
+          "query_type": "dosage_change",
+          "explanation": "dosage recommendation request \u2014 out of scope",
+          "confidence_score": 1.0,
+          "reasoning_path": "Unsafe clinical query intercepted."
+        }
+      },
+      "gap_detector": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Pending",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "risk_assessment": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Pending",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "trend_analyzer": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Pending",
+        "retrieved_memory": "None",
+        "output": {}
+      },
+      "summary": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "Pending",
+        "retrieved_memory": "None",
+        "output": {}
+      }
+    }
+  }
+]

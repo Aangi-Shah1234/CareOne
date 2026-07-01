@@ -1,0 +1,821 @@
+{
+  "history": [
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-24",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqRJonoq76YKuakbdmMHPGS87tSkQz4zGsZVs_-NGMwqc2PwD2EJuQh1hIa9IlwXuJo3zLO-Cc7MRePlWx9g040EFAbEHv68RcC1Jq2UnSLIolSGqyiTJKLSmu5VZ33x4HqW-9nN8ZBnItNc0B4_BBH2th3ooBNYY-ljrKr4NU4XHbOvrJbJ2GtGO7isUFIPpDNkVB"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning BP check: 142/90."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Logged fluid intake total: 1200ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Completed yoga stretching."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonNEsmXrZWQD8Clo-ZzQp_WM4PxgeieZG5ka22-Q-rsKyjLvOBGs1-fLvkCZ__8F9n99Qb9Ch_T67-sDfaODvKlw==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonPJVVXtQU_G3pgvCjNunmMpoA1OZ5zOt8ZSWuFRE_po-4mQzWuO8XhB7Ii0Cn2jiN7mcQIsPQY_yRxh1DD-cJzQ==",
+          "status": "Normal",
+          "explanation": "Total fluids measured.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 90% of tasks today. Blood pressure remains high at 142/90. Fluid intake logged at 1200ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-25",
+      "raw_notes": [
+        {
+          "caregiver": "John Doe",
+          "text": "gAAAAABqRJonJNAv8sRQ7vQzQFk3dxbjq0mRuANITt1HRJKyhJTfyWPwyjXPJG_qnv6arOezq2GgadH5qJyuN5Ag7Jpk6HLELUQEd1in8_UXeXETysmxPj--_1Lg03H3ZCbmTgS_tDpwjxL1Gk8ygN_B0y9WvEnA66qvxv63NjzT9U7B5DLcEKOXczGwOgp0KeSTDpL0g-5p"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Morning BP check: 148/94."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Logged fluid intake total: 1350ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Completed yoga stretching."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJon1WiZT-Qk3z9SxOVncxZKxP_m2pLpe_YonJ4uDq-mX81NqQyic67PRn5i6xp73rlAnixzcmmegDOHXqbBL6E8Jw==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "John Doe",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJondWI7PuDXWpElUgpkYzcWRXgDf2r-2CqcDDBOETHHZ3urx8LFOBXyppAsT-EDzWCTPNJQNCcziLLj3z6wQiSaCw==",
+          "status": "Normal",
+          "explanation": "Total fluids measured.",
+          "caregiver": "John Doe",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 85% of tasks today. Blood pressure remains high at 148/94. Fluid intake logged at 1350ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-26",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqRJonojlanPNxYlj-7hsvXcG-8mPFy6S4qbR2Ep8SJRYYSOqBpM4HMWUu5uqdmhMivaITVK_fWXH1fisgj0ZcFJPmmgHWpimycf6wU0s88n3igZuo03o53CO_Ecf7hy1-HOKtf1hlX8qJIHorXYaLvqGooXcRl_rU2Iy7JjEHqdD9DRp5CraFI8dpP3nZIrdlmOV7"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning BP check: 150/96."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Logged fluid intake total: 1550ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Completed yoga stretching."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonI1q_N6_RDl3Jq9QS3KQoQeuOHp3Ljhxs1H-QX9zVkW7_Z0Mpx36FafBxq8YNVRTBpD0XUF-upyzqo8py2fblPw==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonjn-jP3hvUF9aihF418AhPIqWMFXVR_3l1dOVXNtBwuKj8FzA3MU90xa2JfaKzhBPrl6Jk2M43CpKoLAPWD-b9g==",
+          "status": "Warning",
+          "explanation": "Total fluids measured.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "High",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 90% of tasks today. Blood pressure remains high at 150/96. Fluid intake logged at 1550ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-27",
+      "raw_notes": [
+        {
+          "caregiver": "John Doe",
+          "text": "gAAAAABqRJonh2AGNU1gU1jlJSrHp1LbZoR1IIXUekR1GkYjc8pElhNNvyq4NSrbOKRdQb9QhOjbiHzbkzsxzmRMC0_RQpuH7IRY-VDaTS1-yth_r7lcbDibSqkhCzhDcyqAeRaE-OSHr5SkEs4kwbzw78QN6VpmtsOXKro6g0eR9gDNXQl3TgKwlntw31zT_wESBFrb7Oyo"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Morning BP check: 138/88."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Logged fluid intake total: 1100ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Skipped",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Skipped exercise."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonEI4ZIbgAjeESsMJiZZY3pdLBt_XXEf6C7bxgFd3WmlyJwDt1sOGdOvRVXxkUx1RMlBdbCcwiVGx34sFl-RYQ3w==",
+          "status": "Elevated",
+          "explanation": "High readings recorded.",
+          "caregiver": "John Doe",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonS4gWxqKgu9ximg1ay77-aSlPwycrKNfatyNcSP0wAYu7Om5I5A6nPAQj42Ed61fqeYQh7J6GscwllMCVTI43YQ==",
+          "status": "Normal",
+          "explanation": "Total fluids measured.",
+          "caregiver": "John Doe",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "custom",
+          "task_name": "Exercise",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was skipped."
+        }
+      ],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 80% of tasks today. Blood pressure remains high at 138/88. Fluid intake logged at 1100ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "High BP monitor."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-28",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqRJonypT-WchSnHAi7pk21mG3UtSfPii9E5NTWl4awgsXx2xsRdZiGapOUOHAKNeUXK0Fv1gZHXOlgOGZu_S6d2nBNnPLdBu5F5UbnklyPO63GOz4SWdGeNwuEd4tSqPXTc71K5IIaGAL0qcntoLFmbkcIONl_cnlfojrJArsLUO3x9Mxedhu6bWL6psjqHk6n7VF"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning BP check: 144/92."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Logged fluid intake total: 1450ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Completed yoga stretching."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonX8-8lkvJPSC62MJz0GSviei_j4M_tSn2BCjx2xezswvJhDNZ4FCxN_iwz3I8u8DrkfUdgBqnvE0ZBhk0sq0OGA==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonz3hlsLl0EIvhyLlcKmI6jsz0DXk04vvxKUAlFacLV6c3hoqmHffVCVtpl2Bbo5pD8LLH1GgWP5LEzfVtktK0WQ==",
+          "status": "Normal",
+          "explanation": "Total fluids measured.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 95% of tasks today. Blood pressure remains high at 144/92. Fluid intake logged at 1450ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-29",
+      "raw_notes": [
+        {
+          "caregiver": "John Doe",
+          "text": "gAAAAABqRJonUf8Httw6PRfq7i6V9Mdx2hZsBVCAk7-CFv1Usu2Elwxb37JnaJS7d9X5ob6r5KMQHUEGfkurZYIIOno5aAeAaGt-Z1RNrFQ3PbprZ5LMiv3g_1V41uyjyC0Fr9gIgTNCaRZeGZ2QBEngpBCyc8ttCz9FUKjunyjQXal3NISA_dsbU_1YsQCD9SDo1vy8adWW"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Morning BP check: 155/98."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Logged fluid intake total: 1650ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Skipped",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Skipped exercise."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Skipped",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonsGYJ7XlLl4f1JOZIGaOoaN-iWX3qBDj9tdsMyVwyDmT5Dc6p28GN2QOy_3sPFnOWampEoX7-jwI5uimtMF78_g==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "John Doe",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonNGeUYMUwtUXAsc6qhKBmZRUZPF6AkFydzk3yKqpely3ygBJwxkwdDlby-7zLKXtCs7i4C21B3f7Xkd7KS-epHA==",
+          "status": "Warning",
+          "explanation": "Total fluids measured.",
+          "caregiver": "John Doe",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "custom",
+          "task_name": "Exercise",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was skipped."
+        },
+        {
+          "task_id": "custom",
+          "task_name": "Vitals Check",
+          "category": "Routine",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Task was skipped."
+        }
+      ],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "High",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 70% of tasks today. Blood pressure remains high at 155/98. Fluid intake logged at 1650ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    },
+    {
+      "patient_id": "test_patient_qa",
+      "date": "2026-06-30",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqRJonYLSMuE_E6cBuKMT6LFViGi4rO8S5oaIz8za4k8PeefeHhp6LbRZY5dGr3Cb90dLoPmIkySRaiKYXfUGvw_p_hTnHr6rVkbtFpUq5ZbOOUkzLbO2lzSSDn60Acpwl_xr-yo4IXdk-U6KY_iWmlFcyq--XPR2OlX2YGC6yf2IUFe2y-O3md3n_r5epTiNf96HF"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "08:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning BP check: 140/90."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate low sodium oatmeal."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "CKD meds and vitamins taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Logged fluid intake total: 1300ml."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Completed yoga stretching."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Ate leached greens and chicken."
+        },
+        {
+          "activity": "Vitals Check",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening vital check completed."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqRJonAkGGGru4eX_G5pUmcncPj_9MFKADYuwT3UvSjFaP_rIrTU6rgEzQ6NI0qhz7zXBQBXU0VZZFfG0agPmop_OEgQ==",
+          "status": "Stage 2 Hypertension",
+          "explanation": "High readings recorded.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "08:00"
+        },
+        {
+          "vital_type": "Fluid Intake",
+          "value_raw": "gAAAAABqRJonXvLI-2XzZGXxZXDCoqZUJyrsJrCp1jSDF232rMyAPeJtyyadtdPR3_3b2LLRTaS26oOo3ocqopH65Vxu4Cg1ig==",
+          "status": "Normal",
+          "explanation": "Total fluids measured.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "14:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Hypertension alerts and fluid restriction bounds.",
+        "confidence": 0.95,
+        "reasoning": "Fluid intake exceeded 1500ml daily target or BP systolic exceeded 150."
+      },
+      "summary": {
+        "executive_summary": "Eleanor completed 90% of tasks today. Blood pressure remains high at 140/90. Fluid intake logged at 1300ml.",
+        "recommended_actions": [
+          "Restrict sodium intake.",
+          "Notify Dr. Patel if BP systolic remains above 150."
+        ],
+        "safety_alerts": [
+          "Stage 2 Hypertension detected."
+        ]
+      }
+    }
+  ]
+}

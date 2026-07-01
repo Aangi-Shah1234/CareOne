@@ -1,0 +1,137 @@
+{
+  "history": [
+    {
+      "date": "2026-06-24",
+      "raw_notes": [
+        {
+          "caregiver": "Caregiver A",
+          "text": "[BLOCKED QUERY] Should I double Arthur's Metformin dose to 1000mg since his blood sugar is high?",
+          "timestamp": "19:51"
+        }
+      ],
+      "reconciled_events": [],
+      "vitals": [],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "summary": {
+        "executive_summary": "CareOne surfaces care information only. Please consult Arthur's doctor for medical decisions.",
+        "recommended_actions": [
+          "Consult physician immediately regarding this request."
+        ],
+        "safety_alerts": [
+          "Caregiver requested out-of-scope medical advice: dosage recommendation request \u2014 out of scope"
+        ]
+      }
+    },
+    {
+      "date": "2026-06-26",
+      "raw_notes": [
+        {
+          "caregiver": "Caregiver A (Morning Shift)",
+          "text": "[BLOCKED QUERY] Gave Dad lunch, but morning meds were delayed. He refused his morning walk because his knees were hurting. Checked his blood pressure: 145/92.",
+          "timestamp": "19:37"
+        },
+        {
+          "caregiver": "Caregiver A (Morning Shift)",
+          "text": "[BLOCKED QUERY] Gave Dad lunch, but morning meds were delayed. He refused his morning walk because his knees were hurting. Checked his blood pressure: 145/92.",
+          "timestamp": "19:53"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "task_id": "morning_meals",
+          "activity": "Breakfast",
+          "inferred_time": "08:30",
+          "status": "Skipped",
+          "caregivers": [
+            "Sarah (Morning)"
+          ],
+          "notes": "Updated from CareOne Studio checklist."
+        },
+        {
+          "task_id": "morning_meds",
+          "activity": "Morning Medications",
+          "inferred_time": "09:00",
+          "status": "Skipped",
+          "caregivers": [
+            "Sarah (Morning)"
+          ],
+          "notes": "Updated from CareOne Studio checklist."
+        }
+      ],
+      "vitals": [],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "morning_meals",
+          "task_name": "Breakfast",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": "High",
+          "explanation": "Breakfast is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "morning_meds",
+          "task_name": "Morning Medications",
+          "category": "Medication",
+          "importance": "High",
+          "confidence_score": "High",
+          "explanation": "Morning Medications is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "afternoon_hydration",
+          "task_name": "Afternoon Hydration",
+          "category": "Hydration",
+          "importance": "Medium",
+          "confidence_score": "Medium",
+          "explanation": "Afternoon Hydration is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "lunch",
+          "task_name": "Lunch",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": "High",
+          "explanation": "Lunch is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "evening_walk",
+          "task_name": "Evening Walk",
+          "category": "Exercise",
+          "importance": "Medium",
+          "confidence_score": "Medium",
+          "explanation": "Evening Walk is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "dinner",
+          "task_name": "Dinner",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": "High",
+          "explanation": "Dinner is unconfirmed in today's reconciled caregiver record."
+        },
+        {
+          "task_id": "evening_meds",
+          "task_name": "Evening Medications",
+          "category": "Medication",
+          "importance": "High",
+          "confidence_score": "High",
+          "explanation": "Evening Medications is unconfirmed in today's reconciled caregiver record."
+        }
+      ],
+      "trends": {},
+      "summary": {
+        "executive_summary": "CareOne surfaces care information only. Please consult Arthur's doctor for medical decisions.",
+        "recommended_actions": [
+          "Consult physician immediately regarding this request."
+        ],
+        "safety_alerts": [
+          "Caregiver requested out-of-scope medical advice: dosage recommendation request - out of scope"
+        ]
+      }
+    }
+  ]
+}

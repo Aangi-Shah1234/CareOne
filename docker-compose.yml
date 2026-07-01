@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - MONGO_URI=mongodb://mongodb:27017/CareOne
+      - MONGO_DB_NAME=CareOne
+      - CAREONE_LIVE_LLM=0
+      - CAREONE_HOST=0.0.0.0
+      - CAREONE_PORT=8501
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

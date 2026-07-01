@@ -1,0 +1,173 @@
+[
+  {
+    "patient_id": "aangi",
+    "date": "2026-06-28",
+    "timestamp": "2026-06-28T10:21:17.585360",
+    "trace": {
+      "pipeline_metadata": {
+        "timestamp": "2026-06-28T10:21:17.409865",
+        "patient_id": "aangi",
+        "date_processed": "2026-06-28",
+        "caregiver": "Aangi  Shah",
+        "has_new_note": true
+      },
+      "parser": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Mapped caregiver note text to daily routine items based on keywords.",
+        "retrieved_memory": "None",
+        "output": {
+          "events": [
+            {
+              "activity": "Meal",
+              "time_raw": "dinner",
+              "inferred_time": "19:00",
+              "status": "Completed",
+              "notes": "Dinner was reported.",
+              "caregiver": "Aangi  Shah"
+            },
+            {
+              "activity": "Exercise",
+              "time_raw": "exercise",
+              "inferred_time": "17:00",
+              "status": "Completed",
+              "notes": "Walk/exercise context logged.",
+              "caregiver": "Aangi  Shah"
+            }
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Mapped caregiver note text to daily routine items based on keywords."
+        }
+      },
+      "vitals_validator": {
+        "duration_ms": 0,
+        "confidence_score": 0.98,
+        "reasoning_path": "Extracted numerical patterns matching blood pressure (SYS/DIA), glucose (mg/dL), and fluid intake (ml).",
+        "retrieved_memory": "None",
+        "output": {
+          "readings": [],
+          "confidence_score": 0.98,
+          "reasoning_path": "Extracted numerical patterns matching blood pressure (SYS/DIA), glucose (mg/dL), and fluid intake (ml)."
+        }
+      },
+      "reconciliation": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Merged incoming parsed caregiver logs with existing logs, checking for activity status overrides.",
+        "retrieved_memory": "None",
+        "output": {
+          "reconciled_events": [
+            {
+              "activity": "Meal",
+              "time_raw": "dinner",
+              "inferred_time": "19:00",
+              "status": "Completed",
+              "notes": "Dinner was reported.",
+              "caregivers": [
+                "Aangi  Shah"
+              ]
+            }
+          ],
+          "conflicts": [],
+          "confidence_score": 0.95,
+          "reasoning_path": "Merged incoming parsed caregiver logs with existing logs, checking for activity status overrides."
+        }
+      },
+      "refusal_handler": {
+        "duration_ms": 0,
+        "confidence_score": 1.0,
+        "reasoning_path": "No refused or skipped events found.",
+        "retrieved_memory": "Retrieved 0 patient preferences.",
+        "output": {
+          "interventions": [],
+          "confidence_score": 1.0,
+          "reasoning_path": "No refused or skipped events found."
+        },
+        "safety_check": {
+          "is_medical_query": false,
+          "query_type": "none",
+          "explanation": "no medical advice request detected",
+          "confidence_score": 1.0,
+          "reasoning_path": "Checked text against disallowed clinical modification keywords: dosage, double dose, prescribe."
+        }
+      },
+      "gap_detector": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Compared daily routine schedule guidelines against reconciled completed events.",
+        "retrieved_memory": "None",
+        "output": {
+          "detected_gaps": [
+            {
+              "task_id": "medications",
+              "task_name": "Medications Check",
+              "category": "Medication",
+              "importance": "High",
+              "confidence_score": 0.85,
+              "explanation": "Medications Check is unconfirmed in today's caregiver notes."
+            },
+            {
+              "task_id": "evening_walk",
+              "task_name": "Evening Walk",
+              "category": "Exercise",
+              "importance": "Medium",
+              "confidence_score": 0.85,
+              "explanation": "Evening Walk is unconfirmed in today's caregiver notes."
+            }
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Compared daily routine schedule guidelines against reconciled completed events."
+        }
+      },
+      "risk_assessment": {
+        "duration_ms": 0,
+        "confidence_score": 0.92,
+        "reasoning_path": "Analyzed vital indicators and daily routine gap logs for safety assessment.",
+        "retrieved_memory": "None",
+        "output": {
+          "risk_level": "Medium",
+          "description": "Systolic BP above 140 mmHg and unconfirmed medication tasks logged.",
+          "confidence_score": 0.92,
+          "reasoning_path": "Analyzed vital indicators and daily routine gap logs for safety assessment."
+        }
+      },
+      "trend_analyzer": {
+        "duration_ms": 7,
+        "confidence_score": 0.9,
+        "reasoning_path": "Scanned last 7 days of vitals records for patterns in systolic BP and fluid targets.",
+        "retrieved_memory": "Retrieved 7 days of historical logs.",
+        "output": {
+          "completion_rates": [],
+          "observed_trends": [
+            {
+              "trend_type": "Compliance",
+              "observation": "Fluid restriction warning triggered twice for Eleanor.",
+              "impact": "Exceeding fluid limits increases swelling risk."
+            }
+          ],
+          "summary_insight": "Elective trend analysis processed 7 days of logs. Fluid restrictions need stricter check-ins.",
+          "confidence_score": 0.9,
+          "reasoning_path": "Scanned last 7 days of vitals records for patterns in systolic BP and fluid targets."
+        }
+      },
+      "summary": {
+        "duration_ms": 0,
+        "confidence_score": 0.95,
+        "reasoning_path": "Synthesized summary metrics from timeline, gaps list, and vital warnings.",
+        "retrieved_memory": "None",
+        "output": {
+          "executive_summary": "All caregiver logs reconciled successfully. Care plan shows 2 unconfirmed task(s) remaining.",
+          "recommended_actions": [
+            "Review unconfirmed high-importance tasks before shift end.",
+            "Verify vital levels and consult the doctor for clinical concerns."
+          ],
+          "safety_alerts": [
+            "2 unconfirmed care task(s) require follow-up."
+          ],
+          "confidence_score": 0.95,
+          "reasoning_path": "Synthesized summary metrics from timeline, gaps list, and vital warnings."
+        }
+      }
+    }
+  }
+]

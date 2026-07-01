@@ -1,0 +1,69 @@
+{
+  "patient_name": "Arthur",
+  "age": 78,
+  "conditions": "Diabetes Type 2, Mild Dementia",
+  "preferences": [
+    "Prefers morning walks in the garden when knees do not hurt.",
+    "Likes having small, frequent meals rather than large ones.",
+    "Refuses physical exercises when joint pain flares up.",
+    "Recurring Care Gap Alert: evening_walk is frequently unconfirmed."
+  ],
+  "daily_routine": [
+    {
+      "task_id": "breakfast",
+      "name": "Breakfast",
+      "time_expected": "08:30",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Nutritious breakfast and morning tea."
+    },
+    {
+      "task_id": "morning_meds",
+      "name": "Morning Medications",
+      "time_expected": "09:00",
+      "category": "Medication",
+      "importance": "High",
+      "description": "Blood pressure and joint supplements."
+    },
+    {
+      "task_id": "lunch",
+      "name": "Lunch",
+      "time_expected": "13:00",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Balanced lunch, light on sodium."
+    },
+    {
+      "task_id": "afternoon_hydration",
+      "name": "Afternoon Hydration",
+      "time_expected": "14:00",
+      "category": "Hydration",
+      "importance": "Medium",
+      "description": "Ensure at least 500ml of water is consumed."
+    },
+    {
+      "task_id": "evening_walk",
+      "name": "Evening Walk",
+      "time_expected": "17:00",
+      "category": "Exercise",
+      "importance": "Medium",
+      "description": "Short walk in the garden or neighborhood for mobility."
+    },
+    {
+      "task_id": "dinner",
+      "name": "Dinner",
+      "time_expected": "19:00",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Evening meal, easy to digest."
+    },
+    {
+      "task_id": "evening_meds",
+      "name": "Evening Medications",
+      "time_expected": "21:00",
+      "category": "Medication",
+      "importance": "High",
+      "description": "Heart medication and sleeping aid if prescribed."
+    }
+  ]
+}

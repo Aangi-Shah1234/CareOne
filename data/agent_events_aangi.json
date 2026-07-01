@@ -1,0 +1,151 @@
+{
+  "events": [
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 1 care activities from raw text",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Medications Check unconfirmed \u2014 alert raised",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Evening Walk unconfirmed \u2014 alert raised",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Risk Agent",
+      "action": "Safety risk calculated: Medium",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Trends Agent",
+      "action": "BP systolic 7-day avg 145 mmHg \u2014 stable trend analyzed",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:20"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 2 care activities from raw text",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Medications Check unconfirmed \u2014 alert raised",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Evening Walk unconfirmed \u2014 alert raised",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Risk Agent",
+      "action": "Safety risk calculated: Medium",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Trends Agent",
+      "action": "BP systolic 7-day avg 145 mmHg \u2014 stable trend analyzed",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 2 care activities from raw text",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Medications Check unconfirmed \u2014 alert raised",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Gaps Agent",
+      "action": "Evening Walk unconfirmed \u2014 alert raised",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Risk Agent",
+      "action": "Safety risk calculated: Medium",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Trends Agent",
+      "action": "BP systolic 7-day avg 145 mmHg \u2014 stable trend analyzed",
+      "timestamp": "10:21"
+    },
+    {
+      "patient_id": "aangi",
+      "date": "2026-06-28",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "10:21"
+    }
+  ]
+}

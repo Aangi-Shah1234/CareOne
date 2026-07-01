@@ -1,0 +1,33 @@
+{
+  "patient_name": "anj",
+  "age": 86,
+  "relationship": "Daughter",
+  "conditions": "Cancer",
+  "preferences": [],
+  "daily_routine": [
+    {
+      "task_id": "breakfast",
+      "name": "Breakfast",
+      "time_expected": "08:30",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Healthy breakfast"
+    },
+    {
+      "task_id": "medications",
+      "name": "Medications Check",
+      "time_expected": "09:00",
+      "category": "Medication",
+      "importance": "High",
+      "description": "Administer daily pills"
+    },
+    {
+      "task_id": "evening_walk",
+      "name": "Evening Walk",
+      "time_expected": "17:00",
+      "category": "Exercise",
+      "importance": "Medium",
+      "description": "Short walk around garden"
+    }
+  ]
+}

@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CareOne - Multi-Agent Eldercare Coordination Hub</title>
+    <link rel="stylesheet" href="/static/styles.css?v=9" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <!-- 1. Landing Page View -->
+    <section id="landing-view" class="landing-section">
+      <header class="landing-header">
+        <div class="landing-header-container">
+          <div class="landing-brand">
+            <div class="brand-mark"><i class="ti ti-heart-handshake"></i></div>
+            <div>
+              <strong>CareOne</strong>
+            </div>
+          </div>
+          
+          <!-- Center Nav pills container -->
+          <div class="landing-nav-pills">
+            <button class="landing-nav-pill-btn active" onclick="navigateTo('/')">Home</button>
+            <button class="landing-nav-pill-btn" onclick="document.getElementById('features-section').scrollIntoView({behavior: 'smooth'})">Features</button>
+            <button class="landing-nav-pill-btn" onclick="document.getElementById('landing-footer').scrollIntoView({behavior: 'smooth'})">Contact</button>
+          </div>
+
+          <div class="landing-nav-actions" style="display: flex; align-items: center; gap: 14px;">
+            <!-- Landing page theme toggle -->
+            <label class="theme-switch" style="transform: scale(0.95); margin: 0; display: inline-block;">
+              <input type="checkbox" id="landing-theme-toggle-chk" />
+              <span class="theme-slider"></span>
+            </label>
+            <button id="btn-landing-login" class="landing-nav-btn">Sign In</button>
+            <button id="btn-landing-signup" class="landing-nav-btn primary-btn">Create Account</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="studio-landing-main">
+        <!-- Hero Section -->
+        <section class="studio-hero-section">
+          <div class="studio-hero" style="animation: fadeInUp 0.8s ease;">
+            <div class="studio-hero-copy">
+              <h1 style="font-size: 44px; font-weight: 800; line-height: 1.25; margin-bottom: 18px; letter-spacing: -0.03em;">Every note your family writes, <span style="color: var(--brand); background: linear-gradient(120deg, rgba(61, 107, 88, 0.15) 0%, rgba(61, 107, 88, 0.05) 100%); padding: 0 8px; border-radius: 6px;">kept safe</span> and ready.</h1>
+              <p class="hero-subtitle" style="font-size: 18px; color: var(--secondary); margin-bottom: 28px; line-height: 1.6; max-width: 580px;">Eight quiet agents parse caregiver notes, flag vitals anomalies, reconcile daily checklists, and compile shift briefs in the background. No complex forms, no chatbots.</p>
+              
+              <div class="landing-hero-actions" style="display: flex; gap: 14px; margin-bottom: 32px;">
+                <button id="btn-launch-app" class="primary" style="padding: 14px 28px !important; font-size: 16px; border-radius: 12px; box-shadow: 0 4px 14px rgba(31, 40, 32, 0.15);"><i class="ti ti-player-play"></i> Open Live Studio</button>
+                <button id="btn-quick-signup" class="secondary" style="padding: 14px 28px !important; font-size: 16px; border-radius: 12px; background: transparent; border: 1px solid var(--line); color: var(--ink);"><i class="ti ti-user-plus"></i> Register Caregiver</button>
+              </div>
+
+              <div class="hero-trust-row" style="display: flex; gap: 20px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px;">
+                <div class="hero-trust-item" style="display: flex; align-items: center; gap: 6px;"><i class="ti ti-shield-check" style="font-size: 18px; color: var(--brand);"></i> Never gives medical advice</div>
+                <div class="hero-trust-item" style="display: flex; align-items: center; gap: 6px;"><i class="ti ti-lock" style="font-size: 18px; color: var(--brand);"></i> End-to-end encrypted storage</div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Demo Sandbox (Dark Terminal Theme) -->
+            <div class="studio-hero-visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #1c231e; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 24px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; gap: 16px;">
+              <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--brand), var(--brand-mid));"></div>
+              
+              <!-- Title -->
+              <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+                <span style="font-size: 13px; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 8px;"><i class="ti ti-terminal" style="color: #52a37c;"></i> Interactive sandbox</span>
+                <span id="sandbox-status" style="font-size: 9px; font-weight: 700; color: #52a37c; background: rgba(82, 163, 124, 0.15); padding: 4px 10px; border-radius: 99px; letter-spacing: 0.05em; text-transform: uppercase;">Ready</span>
+              </div>
+
+              <!-- Input Area -->
+              <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
+                <textarea id="sandbox-input" placeholder="Type a caregiver note (e.g. Dad's blood pressure was 135/88, gave meds)..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: #252e28; color: #ffffff; font-size: 13px; outline: none; resize: none; font-family: inherit; line-height: 1.5;"></textarea>
+                <div style="display: flex; gap: 8px; width: 100%;">
+                  <button id="btn-sandbox-run" style="flex: 1; height: 42px; background: #3d6b58; color: #ffffff; border: none; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="ti ti-bolt"></i> Run pipeline
+                  </button>
+                  <button id="btn-sandbox-preset" style="height: 42px; padding: 0 16px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer;">
+                    Preset
+                  </button>
+                </div>
+              </div>
+
+              <!-- Output Results Area -->
+              <div id="sandbox-results" style="width: 100%; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
+                <!-- Dial & Stats row -->
+                <div style="display: flex; align-items: center; justify-content: space-around; gap: 16px;">
+                  <div class="conic-dial-container" style="position: relative; width: 84px; height: 84px; display: grid; place-items: center; background: radial-gradient(circle, #1c231e 60%, rgba(82, 163, 124, 0.2) 100%); border-radius: 50%; box-shadow: inset 0 2px 8px rgba(0,0,0,0.2); flex-shrink: 0;">
+                    <div style="text-align: center;">
+                      <strong id="sandbox-score" style="font-size: 20px; font-weight: 800; color: #ffffff; display: block; line-height: 1;">86%</strong>
+                      <span style="font-size: 8px; text-transform: uppercase; letter-spacing: 0.05em; color: #8a9a90; font-weight: 600; display: block; margin-top: 2px;">SCORE</span>
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 6px; flex: 1;">
+                    <div id="sandbox-stat-risk" style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #ffffff;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--warning); display: inline-block;"></span> 1 risk found</div>
+                    <div id="sandbox-stat-vitals" style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #ffffff;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #d97706; display: inline-block;"></span> 3 vitals tracked</div>
+                    <div id="sandbox-stat-agents" style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #ffffff;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #52a37c; display: inline-block;"></span> 8 AI agents live</div>
+                  </div>
+                </div>
+
+                <!-- 3-Column Status Cards Grid -->
+                <div style="display: flex; gap: 8px; width: 100%; margin-top: 8px;">
+                  <div style="flex: 1; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 4px; text-align: center; background: #252e28;">
+                    <span style="font-size: 8px; font-weight: 600; color: #8a9a90; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Systolic</span>
+                    <strong id="sandbox-v-systolic" style="font-size: 15px; font-weight: 700; color: #ffffff; display: block; margin-top: 4px;">120</strong>
+                  </div>
+                  <div style="flex: 1; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 4px; text-align: center; background: #252e28;">
+                    <span style="font-size: 8px; font-weight: 600; color: #8a9a90; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Diastolic</span>
+                    <strong id="sandbox-v-diastolic" style="font-size: 15px; font-weight: 700; color: #ffffff; display: block; margin-top: 4px;">80</strong>
+                  </div>
+                  <div style="flex: 1; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 4px; text-align: center; background: #252e28;">
+                    <span style="font-size: 8px; font-weight: 600; color: #8a9a90; text-transform: uppercase; letter-spacing: 0.05em; display: block;">Meds</span>
+                    <strong id="sandbox-v-meds" style="font-size: 15px; font-weight: 700; color: #ffffff; display: block; margin-top: 4px;">Active</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Platform Live Statistics Bar -->
+        <section class="different-section" style="background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px 32px; margin-bottom: 40px; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 20px;">
+          <div>
+            <strong style="font-size: 32px; font-weight: 800; color: var(--brand); display: block;">24,800+</strong>
+            <span style="font-size: 13px; color: var(--secondary); font-weight: 500;">Clinical Notes Processed</span>
+          </div>
+          <div>
+            <strong style="font-size: 32px; font-weight: 800; color: var(--brand); display: block;">99.8%</strong>
+            <span style="font-size: 13px; color: var(--secondary); font-weight: 500;">Safety Interception Rate</span>
+          </div>
+          <div>
+            <strong style="font-size: 32px; font-weight: 800; color: var(--brand); display: block;">&lt; 2.4s</strong>
+            <span style="font-size: 13px; color: var(--secondary); font-weight: 500;">Average Pipeline Latency</span>
+          </div>
+        </section>
+
+        <!-- Interactive Workflow Section -->
+        <section class="different-section" style="margin-bottom: 40px;">
+          <span class="eyebrow" style="text-align: center; margin-bottom: 8px;">INTELLIGENT TRANSLATION PIPELINE</span>
+          <h2 style="font-size: 28px; text-align: center; font-weight: 700; margin-bottom: 24px; color: var(--ink);">How unstructured text becomes a safe log?</h2>
+          <div class="steps-grid-4col" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+            <article class="panel" style="padding: 24px; background: var(--surface);">
+              <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--brand-light); color: var(--brand); font-weight: 700; display: grid; place-items: center; margin-bottom: 16px;">1</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Caregiver logs note</h4>
+              <p style="font-size: 13px; color: var(--secondary); line-height: 1.5; margin: 0;">"Gave Ananya lunch, took afternoon meds, blood pressure was 142/91, skipped evening walk."</p>
+            </article>
+            <article class="panel" style="padding: 24px; background: var(--surface);">
+              <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--brand-light); color: var(--brand); font-weight: 700; display: grid; place-items: center; margin-bottom: 16px;">2</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Parser parses metrics</h4>
+              <p style="font-size: 13px; color: var(--secondary); line-height: 1.5; margin: 0;">Parser & Vitals agents extract systolic/diastolic values, identify meds compliance, and mark daily checklist.</p>
+            </article>
+            <article class="panel" style="padding: 24px; background: var(--surface);">
+              <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--brand-light); color: var(--brand); font-weight: 700; display: grid; place-items: center; margin-bottom: 16px;">3</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Risk Agent assesses</h4>
+              <p style="font-size: 13px; color: var(--secondary); line-height: 1.5; margin: 0;">Risk Agent calculates overall safety score, flags high BP threshold, and triggers contradiction alert.</p>
+            </article>
+            <article class="panel" style="padding: 24px; background: var(--surface);">
+              <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--brand-light); color: var(--brand); font-weight: 700; display: grid; place-items: center; margin-bottom: 16px;">4</span>
+              <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Compile shift handoff</h4>
+              <p style="font-size: 13px; color: var(--secondary); line-height: 1.5; margin: 0;">Summary Agent outputs a clean Hand-off Brief PDF for the next shift coordinator.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- What makes this different Section -->
+        <section id="features-section" class="different-section" style="margin-bottom: 45px;">
+          <span class="eyebrow" style="text-align: center; margin-bottom: 8px;">WHAT MAKES THIS DIFFERENT</span>
+          <h2 style="font-size: 28px; text-align: center; font-weight: 700; margin-bottom: 28px; color: var(--ink);">Engineered for clinical-grade reliability</h2>
+          <div class="different-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <article class="panel" style="padding: 28px; background: var(--surface);">
+              <div class="different-icon" style="font-size: 28px; color: var(--brand); margin-bottom: 16px;"><i class="ti ti-message"></i></div>
+              <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Write like you talk</h4>
+              <p style="font-size: 14px; color: var(--secondary); line-height: 1.6; margin: 0;">No complex databases or dropdown inputs required. Caregivers type natural status notes; AI handles the structure.</p>
+            </article>
+            <article class="panel" style="padding: 28px; background: var(--surface);">
+              <div class="different-icon" style="font-size: 28px; color: var(--brand); margin-bottom: 16px;"><i class="ti ti-users"></i></div>
+              <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Built for many hands</h4>
+              <p style="font-size: 14px; color: var(--secondary); line-height: 1.6; margin: 0;">Multiple family caregivers or professional nurses logging separately are reconciled into a single, cohesive log timeline.</p>
+            </article>
+            <article class="panel" style="padding: 28px; background: var(--surface);">
+              <div class="different-icon" style="font-size: 28px; color: var(--brand); margin-bottom: 16px;"><i class="ti ti-shield-lock"></i></div>
+              <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Surfaces, never decides</h4>
+              <p style="font-size: 14px; color: var(--secondary); line-height: 1.6; margin: 0;">Includes a dedicated safety refusal filter that flags out-of-scope medical queries and protects patient PHI.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="different-section" style="margin-bottom: 45px; background: var(--brand-light); padding: 36px 40px; border-radius: 24px; border: 1px solid rgba(61, 107, 88, 0.1);">
+          <span class="eyebrow" style="text-align: center; margin-bottom: 8px; color: var(--brand-light-text);">TESTIMONIALS</span>
+          <h2 style="font-size: 28px; text-align: center; font-weight: 700; margin-bottom: 28px; color: var(--brand-light-text);">Trusted by care circles</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div style="background: var(--surface); padding: 24px; border-radius: 16px; border: 1px solid var(--line); position: relative;">
+              <p style="font-size: 14px; font-style: italic; color: var(--secondary); line-height: 1.6; margin-bottom: 12px;">"CareOne saved us hours of daily sync-ups. The agents capture what we miss in shift handoffs and flag vital risks immediately."</p>
+              <strong style="font-size: 13px; color: var(--ink);">— Sarah Jenkins, Lead Nurse Coordinator</strong>
+            </div>
+            <div style="background: var(--surface); padding: 24px; border-radius: 16px; border: 1px solid var(--line); position: relative;">
+              <p style="font-size: 14px; font-style: italic; color: var(--secondary); line-height: 1.6; margin-bottom: 12px;">"As a family caregiver, I can finally keep a safe, structured medical history of my father without having to type hours of logs."</p>
+              <strong style="font-size: 13px; color: var(--ink);">— David Morris, Family Caregiver</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta-section">
+          <h2>The record starts with a note.</h2>
+          <p>Open the live studio, write a sample shift note, and watch eight agents turn it into a safe clinical record.</p>
+          <div class="final-cta-actions" style="display: flex; justify-content: center; gap: 16px;">
+            <button onclick="navigateTo('/login')" class="primary" style="background: var(--brand); color: #ffffff; padding: 14px 28px !important; border-radius: 10px; font-size: 16px;">Open Live Studio →</button>
+          </div>
+        </section>
+      </main>
+
+      <footer id="landing-footer" class="landing-footer" style="background: var(--surface); border-top: 1px solid var(--line); padding: 40px 0;">
+        <div class="landing-footer-container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; text-align: left; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <div class="brand-mark" style="width: 28px; height: 28px; font-size: 13px; border-radius: 6px;"><i class="ti ti-heart-handshake"></i></div>
+              <strong style="color: var(--ink); font-size: 16px;">CareOne</strong>
+            </div>
+            <p style="font-size: 13px; color: var(--secondary); line-height: 1.5; margin: 0; max-width: 220px;">Collaborative EMR platform driven by cooperative multi-agent coordination.</p>
+            <span style="display: block; margin-top: 12px; font-size: 12px; color: var(--brand); font-weight: 600;"><i class="ti ti-mail"></i> support@careone.org</span>
+          </div>
+          <div>
+            <strong style="font-size: 13px; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 12px;">Product</strong>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2;">
+              <li><a href="#" onclick="navigateTo('/login')" style="color: var(--secondary); text-decoration: none;">Live Studio</a></li>
+              <li><a href="#" onclick="navigateTo('/login')" style="color: var(--secondary); text-decoration: none;">Agents Trace</a></li>
+              <li><a href="#" onclick="document.getElementById('features-section').scrollIntoView({behavior: 'smooth'})" style="color: var(--secondary); text-decoration: none;">Features</a></li>
+            </ul>
+          </div>
+          <div>
+            <strong style="font-size: 13px; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 12px;">Company</strong>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2;">
+              <li><a href="#" style="color: var(--secondary); text-decoration: none;">About CareOne</a></li>
+              <li><a href="#" style="color: var(--secondary); text-decoration: none;">Our Technology</a></li>
+              <li><a href="#" style="color: var(--secondary); text-decoration: none;">Safety Guide</a></li>
+            </ul>
+          </div>
+          <div>
+            <strong style="font-size: 13px; color: var(--ink); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 12px;">Legal</strong>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2;">
+              <li><a href="#" style="color: var(--secondary); text-decoration: none;">Privacy Policy</a></li>
+              <li><a href="#" style="color: var(--secondary); text-decoration: none;">Terms of Service</a></li>
+              <li><span style="color: var(--muted); font-size: 11px; display: block; margin-top: 6px;">© 2026 CareOne</span></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- 2. Authentication View (Login, Signup, Forgot Password, OTP, Reset Password) -->
+    <section id="auth-view" class="auth-section hidden">
+      <div class="auth-wrapper">
+        
+        <!-- Left: Branding & Info Panel -->
+        <div class="auth-visual-panel">
+          <div class="auth-visual-glow"></div>
+          <div class="auth-visual-content">
+            <div class="auth-brand-logo" style="margin-bottom: 24px;">
+              <i class="ti ti-heart-handshake" style="color: #a3f7bf;"></i> CareOne
+            </div>
+            
+            <h1 id="auth-visual-title" style="margin-top: 0;">Care starts here.</h1>
+            <p id="auth-visual-desc">Coordinate care, track vitals, and let AI assist in the background.</p>
+            
+            <div class="auth-features-list">
+              <span><i class="ti ti-shield"></i> Never gives medical advice</span>
+              <span><i class="ti ti-lock"></i> End-to-end encrypted storage</span>
+            </div>
+
+            <!-- Compact Metrics Row -->
+            <div class="auth-metrics-compact-row">
+              <span class="metric-pill"><i class="ti ti-cpu"></i> 7 AI Agents</span>
+              <span class="metric-pill"><i class="ti ti-alert-triangle"></i> Risk Alerts</span>
+              <span class="metric-pill"><i class="ti ti-activity"></i> Vitals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Auth Action Card -->
+        <div class="auth-card-glass">
+          <!-- A. LOGIN FORM -->
+          <div id="auth-login-card" class="auth-form-card">
+            <h3 style="margin-top: 0;">Sign In</h3>
+            <p class="auth-subtitle">Access your clinical workspace</p>
+            
+            <form id="login-form" class="stack" style="padding: 0;">
+              <div class="auth-input-group" style="margin-bottom: 16px;">
+                <label>Username</label>
+                <input type="text" id="login-username" placeholder="e.g. caregiver" required />
+              </div>
+
+              <div class="auth-input-group password-group" style="margin-bottom: 20px;">
+                <label>Password</label>
+                <div style="position: relative;">
+                  <input type="password" id="login-password" placeholder="••••••••" required />
+                  <button type="button" class="password-toggle-btn" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 0;"><i class="ti ti-eye"></i></button>
+                </div>
+              </div>
+
+              <div class="auth-action-row" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin-bottom: 20px;">
+                <label class="remember-me" style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--secondary);">
+                  <input type="checkbox" id="login-remember" checked />
+                  <span>Remember me</span>
+                </label>
+                <button type="button" id="btn-goto-forgot" class="link-btn" style="background: transparent; border: none; color: var(--brand); font-weight: 600; cursor: pointer;">Forgot password?</button>
+              </div>
+
+              <button class="auth-submit-btn" type="submit">
+                Sign In
+              </button>
+              
+              <div style="text-align: center; font-size: 13px; color: var(--secondary); margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px;">
+                Don't have an account? <button type="button" id="btn-goto-signup" class="link-btn" style="background: transparent; border: none; color: var(--brand); font-weight: 600; cursor: pointer;">Create Account</button>
+              </div>
+              <p id="auth-message" class="message"></p>
+            </form>
+          </div>
+
+          <!-- B. SIGNUP FORM -->
+          <div id="auth-signup-card" class="auth-form-card hidden">
+            <h3 style="margin-top: 0;">Create Account</h3>
+            <p class="auth-subtitle">Create your account</p>
+            
+            <form id="signup-form" class="stack" style="padding: 0;">
+              <div class="auth-input-group" style="margin-bottom: 16px;">
+                <label>Full Name</label>
+                <input type="text" id="signup-name" placeholder="Aangi Shah" required />
+              </div>
+
+              <div class="auth-input-group" style="margin-bottom: 16px;">
+                <label>Email</label>
+                <input type="email" id="signup-email" placeholder="aangi@careone.app" required />
+              </div>
+
+              <div class="auth-input-group" style="margin-bottom: 16px;">
+                <label>Username</label>
+                <input type="text" id="signup-username" placeholder="aangi_shah" required />
+              </div>
+
+              <div class="auth-input-group password-group" style="margin-bottom: 16px;">
+                <label>Password</label>
+                <div style="position: relative;">
+                  <input type="password" id="signup-password" placeholder="••••••••" required />
+                  <button type="button" class="password-toggle-btn" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 0;"><i class="ti ti-eye"></i></button>
+                </div>
+              </div>
+
+              <div class="auth-input-group" style="margin-bottom: 20px;">
+                <label>I am a</label>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px;">
+                  <label style="cursor: pointer; margin: 0; padding: 0;">
+                    <input type="radio" name="signup-role" value="Family Caregiver" checked style="display: none;" onchange="updateRolePills();" />
+                    <span class="role-pill selected" id="pill-family">Family Caregiver</span>
+                  </label>
+                  <label style="cursor: pointer; margin: 0; padding: 0;">
+                    <input type="radio" name="signup-role" value="Professional" style="display: none;" onchange="updateRolePills();" />
+                    <span class="role-pill" id="pill-professional">Professional</span>
+                  </label>
+                  <label style="cursor: pointer; margin: 0; padding: 0;">
+                    <input type="radio" name="signup-role" value="Care Coordinator" style="display: none;" onchange="updateRolePills();" />
+                    <span class="role-pill" id="pill-coordinator">Care Coordinator</span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="auth-submit-btn" type="submit">
+                Create Account
+              </button>
+              
+              <p style="font-size: 11px; color: var(--secondary); text-align: center; margin: 16px 0 0;">
+                By continuing you agree to the caregiver data-handling terms.
+              </p>
+              
+              <div style="text-align: center; font-size: 13px; color: var(--secondary); margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px;">
+                Already have an account? <button type="button" id="btn-signup-goto-login" class="link-btn" style="background: transparent; border: none; color: var(--brand); font-weight: 600; cursor: pointer;">Sign In</button>
+              </div>
+              <p id="signup-message" class="message"></p>
+            </form>
+          </div>
+
+          <!-- C. FORGOT PASSWORD -->
+          <div id="auth-forgot-card" class="auth-form-card hidden">
+            <h3 style="margin-top: 0;">Reset Password</h3>
+            <p class="auth-subtitle">Enter your username or email to receive a recovery code</p>
+            
+            <form id="forgot-form" class="stack" style="padding: 0;">
+              <div class="auth-input-group" style="margin-bottom: 20px;">
+                <label>Username or Email</label>
+                <input type="text" id="forgot-identity" placeholder="e.g. caregiver" required />
+              </div>
+
+              <button class="auth-submit-btn" type="submit">
+                Send Recovery Code
+              </button>
+              
+              <div style="text-align: center; font-size: 13px; color: var(--secondary); margin-top: 24px; border-top: 1px solid var(--line); padding-top: 20px;">
+                Remember your password? <button type="button" id="btn-forgot-goto-login" class="link-btn" style="background: transparent; border: none; color: var(--brand); font-weight: 600; cursor: pointer;">Sign In</button>
+              </div>
+              <p id="forgot-message" class="message"></p>
+            </form>
+          </div>
+
+          <!-- D. OTP VERIFICATION -->
+          <div id="auth-otp-card" class="auth-form-card hidden">
+            <h3 style="margin-top: 0;">Enter Security Code</h3>
+            <p class="auth-subtitle">Enter the 4-digit code sent to your caregiver email</p>
+            
+            <form id="otp-form" class="stack" style="padding: 0;">
+              <div class="otp-inputs-row" style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 24px;">
+                <input type="text" maxlength="1" class="otp-digit" required />
+                <input type="text" maxlength="1" class="otp-digit" required />
+                <input type="text" maxlength="1" class="otp-digit" required />
+                <input type="text" maxlength="1" class="otp-digit" required />
+              </div>
+
+              <button class="auth-submit-btn" type="submit">
+                Verify Code
+              </button>
+
+              <div class="otp-resend-row" style="text-align: center; font-size: 13px; color: var(--secondary); margin-top: 20px;">
+                Didn't receive the code? <button type="button" class="link-btn" style="background: transparent; border: none; color: var(--brand); font-weight: 600; cursor: pointer;">Resend Code</button>
+              </div>
+              <p id="otp-message" class="message"></p>
+            </form>
+          </div>
+
+          <!-- E. RESET PASSWORD -->
+          <div id="auth-reset-card" class="auth-form-card hidden">
+            <h3 style="margin-top: 0;">Reset Password</h3>
+            <p class="auth-subtitle">Create a secure new password for your account</p>
+            
+            <form id="reset-pass-form" class="stack" style="padding: 0;">
+              <div class="auth-input-group password-group" style="margin-bottom: 16px;">
+                <label>New Password</label>
+                <div style="position: relative;">
+                  <input type="password" id="reset-new-password" placeholder="••••••••" required />
+                  <button type="button" class="password-toggle-btn" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 0;"><i class="ti ti-eye"></i></button>
+                </div>
+              </div>
+
+              <div class="auth-input-group password-group" style="margin-bottom: 20px;">
+                <label>Confirm New Password</label>
+                <div style="position: relative;">
+                  <input type="password" id="reset-confirm-password" placeholder="••••••••" required />
+                  <button type="button" class="password-toggle-btn" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 0;"><i class="ti ti-eye"></i></button>
+                </div>
+              </div>
+
+              <button class="auth-submit-btn" type="submit">
+                Save Password & Sign In
+              </button>
+              <p id="reset-message" class="message"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- 3. Primary App Shell Workspace -->
+    <div id="app-shell" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand" style="margin-bottom: 20px;">
+          <div class="brand-mark"><i class="ti ti-heart-handshake"></i></div>
+          <div class="brand-info">
+            <strong>CareOne</strong>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-view="portal-hub"><i class="ti ti-home"></i> Studio</button>
+          <button class="nav-item" data-view="dashboard"><i class="ti ti-stethoscope"></i> Dashboard</button>
+          <button class="nav-item" data-view="agents"><i class="ti ti-search"></i> Agents</button>
+          <button class="nav-item" data-view="memory"><i class="ti ti-history"></i> Memory</button>
+          <button class="nav-item" data-view="analytics"><i class="ti ti-chart-bar"></i> Analytics</button>
+          <button class="nav-item" data-view="notifications"><i class="ti ti-bell"></i> Notifications</button>
+          <button class="nav-item" data-view="settings"><i class="ti ti-settings"></i> Settings</button>
+          <button class="nav-item" data-view="profile"><i class="ti ti-user"></i> Profile</button>
+        </nav>
+        
+        <div class="theme-toggle-row">
+          <span style="font-size:11px; font-weight:600; color:var(--secondary);"><i class="ti ti-moon"></i> Dark Mode</span>
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle-chk" />
+            <span class="theme-slider"></span>
+          </label>
+        </div>
+
+        <div class="side-card">
+          <span class="eyebrow">Logged in as</span>
+          <strong id="user-display-name">Sarah Jenkins</strong>
+          <span id="user-display-role" class="pill-role">Lead Nurse</span>
+          <button id="btn-logout" class="logout-btn">Logout</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <!-- 3A. Portal Hub View (Patient Directory) -->
+        <section id="portal-hub-view" class="workspace-view active-view">
+          <div class="hub-header">
+            <div>
+              <span class="eyebrow">Care directory</span>
+              <h2 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">Registered patient profiles</h2>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Select a patient to load their daily checklist, history logs, and run the agent validations.</p>
+            </div>
+            <button id="btn-show-register-patient" class="primary" style="background: var(--brand-dark); color: var(--button-light);"><i class="ti ti-plus"></i> Register new patient</button>
+          </div>
+          
+          <div id="patient-directory-grid" class="patient-grid">
+            <!-- Dynamic patient cards seeded here -->
+          </div>
+        </section>
+
+        <!-- 3B. Command Center View -->
+        <section id="dashboard-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow" id="dashboard-patient-relationship">Patient Care Dashboard</span>
+              <h1 id="dashboard-patient-title">Select a patient to begin</h1>
+            </div>
+            <div class="top-actions">
+              <span class="patient-selector-wrapper">
+                <select id="dashboard-patient-selector"></select>
+              </span>
+              <button id="handoff-btn" class="secondary">Generate handoff</button>
+            </div>
+          </header>
+
+          <!-- Empty State Illustration -->
+          <div id="dashboard-empty-state" class="panel" style="text-align: center; padding: 60px 40px; border: 1px dashed var(--line); margin-top: 14px; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-size: 54px; margin-bottom: 16px;">👥</div>
+            <h3 style="margin-bottom: 8px;">Select a patient to begin</h3>
+            <p style="color: var(--secondary); max-width: 420px; margin: 0 0 20px; line-height: 1.6;">Choose an active patient profile from the top-right selector, or go to the Studio to register a new profile.</p>
+            <button onclick="navigateTo('/studio')" class="primary">Go to Studio</button>
+          </div>
+
+          <!-- Active Dashboard Grid -->
+          <div id="dashboard-content-area" class="hidden">
+            <section class="patient-band">
+              <div>
+                <span class="eyebrow">Patient</span>
+                <h2 id="patient-name"> Ananya</h2>
+                <p id="patient-meta">Age 78</p>
+              </div>
+              <div>
+                <span class="eyebrow">Clinical context</span>
+                <p id="patient-conditions">Diabetes Type 2, mild dementia, mobility risk</p>
+              </div>
+              <div>
+                <span class="eyebrow">Daily Care Goal</span>
+                <p id="patient-goal">Reduce unconfirmed daily care tasks and improve shift handoff quality.</p>
+              </div>
+            </section>
+
+            <section class="kpi-grid">
+              <article class="kpi">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <span>Care completion</span>
+                  <i class="ti ti-circle-check" style="color: var(--brand); font-size: 18px;"></i>
+                </div>
+                <strong id="kpi-completion">0%</strong>
+                <small id="kpi-completion-note">0 of 7 routines confirmed</small>
+              </article>
+              <article class="kpi">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <span>Open risks</span>
+                  <i class="ti ti-alert-triangle" style="color: var(--warning); font-size: 18px;"></i>
+                </div>
+                <strong id="kpi-risks">0</strong>
+                <small id="kpi-risk-note">0 high priority</small>
+              </article>
+              <article class="kpi">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <span>Vitals captured</span>
+                  <i class="ti ti-activity" style="color: #d97706; font-size: 18px;"></i>
+                </div>
+                <strong id="kpi-vitals">0</strong>
+                <small id="kpi-vital-note">0 alert readings</small>
+              </article>
+              <article class="kpi">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <span>Contradictions</span>
+                  <i class="ti ti-arrows-minimize" style="color: var(--secondary); font-size: 18px;"></i>
+                </div>
+                <strong id="kpi-conflicts">0</strong>
+                <small>multi-caregiver reconciliation</small>
+              </article>
+            </section>
+
+            <section class="risk-panel" id="risk-panel">
+              <div>
+                <span class="eyebrow">Safety risk assessment</span>
+                <h3 id="risk-level">Not calculated</h3>
+                <p id="risk-description">Run a note through the pipeline to calculate safety risk.</p>
+              </div>
+              <div class="risk-meter" aria-label="Risk score meter">
+                <div id="risk-meter-fill"></div>
+              </div>
+              <div class="risk-confidence">
+                <span>Confidence</span>
+                <strong id="risk-confidence">0%</strong>
+              </div>
+            </section>
+
+            <!-- Ask CareOne & Caregiver Load (Side-by-side) -->
+            <div class="grid halves">
+              <!-- New Feature: Ask CareOne about history -->
+              <article class="ask-careone-card">
+                <div class="label-row" style="font-weight: 700; color: var(--secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ti ti-message-circle" style="font-size:18px; color: var(--brand);"></i> ASK CAREONE ABOUT HISTORY
+                </div>
+                <form id="ask-history-form" class="stack" style="padding:0; margin:0;">
+                  <div class="query-input-wrapper" style="position: relative; margin-bottom: 10px;">
+                    <input id="ask-history-input" placeholder="Ask anything about this patient's care history" required style="padding-left: 36px;" />
+                    <i class="ti ti-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 16px;"></i>
+                  </div>
+                  <button type="submit" class="primary" style="width: 100%;">Query history</button>
+                </form>
+                <div id="ask-history-reply" class="query-answer-box hidden" style="margin-top: 12px; background: var(--surface-2); padding: 14px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; line-height: 1.5;"></div>
+                <div class="example-pills-row" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px;">
+                  <button class="example-query-pill" data-query="did they take their evening medication yesterday" style="font-size:11px; background:var(--surface-2); border:1px solid var(--line); border-radius:99px; padding:4px 10px; cursor:pointer;">evening medication <i class="ti ti-arrow-right"></i></button>
+                  <button class="example-query-pill" data-query="how many times has blood pressure been flagged this month" style="font-size:11px; background:var(--surface-2); border:1px solid var(--line); border-radius:99px; padding:4px 10px; cursor:pointer;">blood pressure flags <i class="ti ti-arrow-right"></i></button>
+                  <button class="example-query-pill" data-query="what did the last caregiver note say" style="font-size:11px; background:var(--surface-2); border:1px solid var(--line); border-radius:99px; padding:4px 10px; cursor:pointer;">last caregiver note <i class="ti ti-arrow-right"></i></button>
+                </div>
+              </article>
+
+              <!-- New Feature: Caregiver load this week -->
+              <article class="caregiver-load-card" style="background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px;">
+                <div class="label-row" style="font-weight: 700; color: var(--secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                  <i class="ti ti-users" style="font-size:18px; color: var(--brand);"></i> Caregiver load this week
+                </div>
+                <div id="caregiver-load-list" class="load-rows-stack" style="display:flex; flex-direction:column; gap:10px;">
+                  <!-- Dynamic load rows -->
+                </div>
+                <div id="caregiver-load-warning" class="load-warning-strip hidden" style="margin-top: 10px; background: var(--warning-light); color: var(--warning); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(168, 84, 42, 0.1); font-size: 12px; display: flex; align-items: center; gap: 6px;">
+                  <i class="ti ti-alert-circle"></i> <span id="caregiver-load-warning-text"></span>
+                </div>
+              </article>
+            </div>
+
+            <div class="grid two-one">
+              <article class="panel">
+                <div class="panel-head">
+                  <div><span class="eyebrow">Intake studio</span><h3>Shift note</h3></div>
+                  <div class="note-template-container">
+                    <select id="note-template-select" style="font-size: 13px; padding: 6px 12px;">
+                      <option value="">-- Load Sample Shift Log --</option>
+                      <option value="bp_normal">Vitals Check - Stable Readings</option>
+                      <option value="refused_walk">Patient Refused Walking Exercise</option>
+                      <option value="missed_hydration">Hydration Log Gap</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <!-- Refusal Warning Disclaimer Banner -->
+                <div class="safety-disclaimer-banner">
+                  <i class="ti ti-alert-circle"></i>
+                  <span id="safety-disclaimer-text">CareOne surfaces care information only. Please consult the patient's doctor for medical decisions.</span>
+                </div>
+
+                <label>Caregiver<input id="caregiver-input" placeholder="Nurse Sarah" /></label>
+                <label>Unstructured care note<textarea id="note-input" rows="5" placeholder="Gave dinner, seemed tired, morning meds taken..."></textarea></label>
+                <button id="process-btn" class="primary" style="width: 100%;"><i class="ti ti-sparkles"></i> Run AI Agent Pipeline</button>
+                <p id="process-message" class="message"></p>
+              </article>
+
+              <article class="panel">
+                <div class="panel-head">
+                  <div><span class="eyebrow">Human in the loop</span><h3>Routine checklist</h3></div>
+                </div>
+                <div id="routine-list" class="routine-list"></div>
+              </article>
+            </div>
+
+            <div class="grid halves">
+              <article class="panel">
+                <div class="panel-head"><div><span class="eyebrow">Today</span><h3>Reconciled timeline</h3></div></div>
+                <div id="timeline" class="stack"></div>
+              </article>
+              <article class="panel">
+                <div class="panel-head"><div><span class="eyebrow">Risk queue</span><h3>Unconfirmed care tasks</h3></div></div>
+                <div id="gaps" class="stack"></div>
+              </article>
+            </div>
+
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Care summary</span><h3>Recommended next actions</h3></div></div>
+              <div id="summary" class="summary-box">Process a caregiver note to generate the daily summary.</div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3C. Agent Trace View -->
+        <section id="agents-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Observability</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">AI Agent Pipeline Trace</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Monitor how agents collaborate, retrieve memory, and calculate decisions.</p>
+            </div>
+          </header>
+          
+          <!-- Visual Flowchart Pipeline -->
+          <div id="agent-flowchart-pipeline" style="display: flex; align-items: center; justify-content: space-between; overflow-x: auto; padding: 20px; background: var(--surface); border-radius: 16px; margin-top: 14px; border: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+            <!-- Flow nodes rendered dynamically by JS -->
+          </div>
+
+          <div class="grid halves" style="margin-top: 16px;">
+            <article class="panel">
+              <div class="panel-head">
+                <div><span class="eyebrow">Execution Logs</span><h3>Agent events sequence</h3></div>
+              </div>
+              <div class="agent-rail" style="display: flex; flex-direction: column; gap: 8px; border: none; padding: 0; background: transparent;">
+                <span class="agent-step-pill active" data-agent="parser" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Parser Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="vitals" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Vitals Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="reconciler" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Reconciler Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="refusal" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Refusal Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="gaps" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Gap Detector</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="risk" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Risk Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="trends" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Trends Agent</span><i class="ti ti-arrow-right"></i></span>
+                <span class="agent-step-pill" data-agent="summary" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--line); font-size: 14px; font-weight: 600;"><span>Summary Agent</span><i class="ti ti-arrow-right"></i></span>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div><span class="eyebrow">Observability Trace</span><h3>Agent details & reasoning</h3></div>
+              </div>
+              <div id="agent-observability-card" style="display: flex; flex-direction: column; gap: 14px;">
+                <!-- Filled dynamically by app.js -->
+                <p style="color: var(--secondary); font-size: 14px;">Select an agent to load its input, output schema, reasoning path, and entity extraction.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3D. Analytics View -->
+        <section id="analytics-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">7-day trends</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">Longitudinal Patient Analytics</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Graphical representations of medication/routine completion averages and vital tracking.</p>
+            </div>
+          </header>
+
+          <div class="grid halves" style="margin-top: 14px;">
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">7-day memory</span><h3>Completion trend</h3></div></div>
+              <div id="completion-chart" class="chart" style="height: 220px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px; min-height: 220px;"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Vitals</span><h3>Blood pressure trend</h3></div></div>
+              <div id="bp-chart" class="chart" style="height: 220px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px; min-height: 220px;"></div>
+            </article>
+          </div>
+
+          <div class="grid halves">
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Vitals</span><h3>Heart rate trend</h3></div></div>
+              <div id="hr-chart" class="chart" style="height: 220px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px; min-height: 220px;"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Hydration</span><h3>Daily fluid intake</h3></div></div>
+              <div id="hydration-chart" class="chart" style="height: 220px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px; min-height: 220px;"></div>
+            </article>
+          </div>
+
+          <div class="grid halves">
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Medications</span><h3>Adherence rate</h3></div></div>
+              <div id="med-adherence-chart" class="chart" style="height: 220px; display: flex; align-items: center; justify-content: center; padding: 10px; min-height: 220px;"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-head"><div><span class="eyebrow">Risk Index</span><h3>Daily safety score</h3></div></div>
+              <div id="risk-index-chart" class="chart" style="height: 220px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px; min-height: 220px;"></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3E. Settings View (Clinical Preferences) -->
+        <section id="settings-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Workspace Preferences</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">Workspace Settings</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Adjust clinical display parameters, security tokens, and notification preferences.</p>
+            </div>
+          </header>
+
+          <article class="panel" style="margin-top: 14px;">
+            <span class="eyebrow">Preferences Config</span>
+            <form id="settings-config-form" class="stack" style="margin-top: 14px; padding:0; margin:0;">
+              
+              <div class="grid halves" style="gap: 16px; margin-bottom: 14px;">
+                <label>Workspace Language
+                  <select id="settings-lang">
+                    <option value="en">English (US)</option>
+                    <option value="es">Español (ES)</option>
+                    <option value="fr">Français (FR)</option>
+                  </select>
+                </label>
+
+                <label>Timezone (for Care Log timestamps)
+                  <select id="settings-tz">
+                    <option value="EST">Eastern Standard Time (EST)</option>
+                    <option value="CST">Central Standard Time (CST)</option>
+                    <option value="PST">Pacific Standard Time (PST)</option>
+                    <option value="GMT">Greenwich Mean Time (GMT)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="grid halves" style="gap: 16px; margin-bottom: 14px;">
+                <label>Vitals Units System
+                  <select id="settings-units">
+                    <option value="imperial">Imperial (Fahrenheit / lbs / mmHg)</option>
+                    <option value="metric">Metric (Celsius / kg / mmHg)</option>
+                  </select>
+                </label>
+
+                <label>Visual Interface Theme
+                  <select id="settings-theme-select">
+                    <option value="light">Sage Clean Theme (Light)</option>
+                    <option value="dark">Charcoal Slate Theme (Dark)</option>
+                  </select>
+                </label>
+              </div>
+
+              <!-- Checkboxes group -->
+              <div style="display:flex; flex-direction:column; gap:12px; margin: 14px 0; border-top: 1px solid var(--line); padding-top: 14px;">
+                <label style="display: flex; align-items: center; gap: 10px; flex-direction: row; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink); text-transform:none; letter-spacing:0; margin:0;">
+                  <input type="checkbox" id="settings-notify-email" checked style="width: auto; margin: 0;" />
+                  <span>Receive immediate email alerts for high-priority clinical gaps</span>
+                </label>
+
+                <label style="display: flex; align-items: center; gap: 10px; flex-direction: row; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink); text-transform:none; letter-spacing:0; margin:0;">
+                  <input type="checkbox" id="settings-high-contrast" style="width: auto; margin: 0;" />
+                  <span>Enable High Contrast accessibility mode (Level AAA compliance)</span>
+                </label>
+
+                <label style="display: flex; align-items: center; gap: 10px; flex-direction: row; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--ink); text-transform:none; letter-spacing:0; margin:0;">
+                  <input type="checkbox" id="settings-otp-security" style="width: auto; margin: 0;" />
+                  <span>Require security code verification (MFA) on every caregiver sign-in</span>
+                </label>
+              </div>
+
+              <!-- Export Section -->
+              <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px; margin-bottom: 20px;">
+                <h4 style="margin: 0 0 6px; font-size: 14px; font-weight: 700; color: var(--ink);">Clinical Data Management</h4>
+                <p style="font-size: 12px; color: var(--secondary); margin: 0 0 10px;">Download your active patient's logs, vitals checklist, and history brief into standard JSON files.</p>
+                <button type="button" id="btn-export-data" class="secondary" style="padding: 10px 18px !important; font-size: 13px; border:1px solid var(--line); color:var(--ink); background:transparent;"><i class="ti ti-download"></i> Export Patient History (JSON)</button>
+                <button type="button" id="btn-export-word" class="secondary" style="padding: 10px 18px !important; font-size: 13px; border:1px solid var(--line); color:var(--ink); background:transparent; margin-left: 8px;"><i class="ti ti-file-text"></i> Export Patient History (Word)</button>
+              </div>
+
+              <div style="display:flex; gap:12px;">
+                <button type="submit" id="btn-save-settings" class="primary" style="padding: 12px 24px !important;">Save Preferences</button>
+              </div>
+              <p id="settings-config-message" class="message" style="margin-top:10px;"></p>
+            </form>
+          </article>
+        </section>
+
+        <!-- 3G. Memory View -->
+        <section id="memory-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Care logs history</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">Chronological Patient Memory</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Full decrypted historical timeline of caregiver notes, vital entries, and care tasks.</p>
+            </div>
+            <div class="top-actions">
+              <span class="patient-selector-wrapper">
+                <select class="history-patient-selector" onchange="selectPatient(this.value); loadHistoryMemory();"></select>
+              </span>
+            </div>
+          </header>
+
+          <!-- Search filter bar -->
+          <div style="position: relative; margin-top: 14px; margin-bottom: 14px;">
+            <input id="memory-search-input" placeholder="Search memory timeline by activity, status, caregiver, or note content..." style="padding-left: 38px;" />
+            <i class="ti ti-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 16px;"></i>
+          </div>
+
+          <div id="memory-timeline-container" class="stack" style="margin-top: 14px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </section>
+
+        <!-- 3H. Notifications View -->
+        <section id="notifications-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Clinical Alerts</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">Alerts & Warning Center</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">High priority safety events, vital threshold violations, and clinical contradictions.</p>
+            </div>
+          </header>
+
+          <!-- Filters Bar -->
+          <div style="display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap;" id="notifications-filter-bar">
+            <button class="primary active" data-filter="all" style="font-size: 12px; padding: 6px 14px !important; border-radius: 99px;">All Alerts</button>
+            <button class="secondary" data-filter="high" style="font-size: 12px; padding: 6px 14px !important; border-radius: 99px; background: transparent; border: 1px solid var(--line); color: var(--warning);">High Severity</button>
+            <button class="secondary" data-filter="medium" style="font-size: 12px; padding: 6px 14px !important; border-radius: 99px; background: transparent; border: 1px solid var(--line); color: #d97706;">Medium Severity</button>
+            <button class="secondary" data-filter="low" style="font-size: 12px; padding: 6px 14px !important; border-radius: 99px; background: transparent; border: 1px solid var(--line); color: var(--secondary);">Low Severity</button>
+            <button class="secondary" data-filter="unread" style="font-size: 12px; padding: 6px 14px !important; border-radius: 99px; background: transparent; border: 1px solid var(--line); color: var(--ink);">Unread</button>
+          </div>
+
+          <div id="notifications-list" class="stack" style="margin-top: 14px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </section>
+
+        <!-- 3I. Profile View -->
+        <section id="profile-view" class="workspace-view hidden">
+          <header class="topbar">
+            <div>
+              <span class="eyebrow">Account Settings</span>
+              <h1 style="font-size: 24px; font-weight: 600; color: var(--ink); margin: 4px 0 2px;">User Profile</h1>
+              <p style="color: var(--secondary); font-size: 12px; margin: 0;">Manage your caregiver account details and workspace credentials.</p>
+            </div>
+          </header>
+
+          <div class="grid halves" style="margin-top: 14px; align-items: start;">
+            <!-- Left Column: Avatar & Profile stats -->
+            <article class="panel" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 24px;">
+              <div style="position: relative; width: 100px; height: 100px; border-radius: 50%; background: var(--brand); color: #ffffff; font-size: 42px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 8px 16px rgba(61,107,88,0.2); margin-bottom: 16px;" id="profile-avatar-placeholder">
+                U
+              </div>
+              <strong style="font-size: 18px; color: var(--ink);" id="profile-card-name">Caregiver</strong>
+              <span style="font-size: 12px; color: var(--muted); display: block; margin-top: 2px;" id="profile-card-role">Lead Nurse</span>
+              <span style="font-size: 11px; font-weight: 600; background: var(--surface-2); padding: 4px 10px; border-radius: 99px; color: var(--secondary); display: inline-block; margin-top: 10px;">Member since Jan 2026</span>
+              
+              <!-- Profile Completion -->
+              <div style="width: 100%; margin-top: 24px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--secondary); margin-bottom: 6px;">
+                  <span>Profile Completion</span>
+                  <strong style="color: var(--brand);">85%</strong>
+                </div>
+                <div style="height: 6px; background: var(--surface-2); border-radius: 99px; overflow: hidden; width: 100%;">
+                  <div style="height: 100%; width: 85%; background: var(--brand); border-radius: 99px;"></div>
+                </div>
+              </div>
+
+              <!-- Biography -->
+              <div style="width: 100%; margin-top: 20px; text-align: left;">
+                <label>Professional Bio
+                  <textarea id="profile-bio" rows="3" placeholder="Clinical experience, specialties, or care coordinator notes..." style="font-size: 13px;"></textarea>
+                </label>
+              </div>
+            </article>
+
+            <!-- Right Column: Edit Profile Form -->
+            <article class="panel">
+              <div class="panel-head">
+                <div><span class="eyebrow">Personal Details</span><h3>Account credentials</h3></div>
+              </div>
+              <form id="profile-edit-form" class="stack" style="padding:0; margin:0;">
+                <label>Display Name
+                  <input id="profile-display-name" required />
+                </label>
+                <label>Username
+                  <input id="profile-username" readonly disabled style="opacity: 0.6; background: var(--surface-2);" />
+                </label>
+                <label>Email Address
+                  <input id="profile-email" type="email" placeholder="nurse.sarah@careone.org" value="caregiver@careone.org" required />
+                </label>
+                <label>Organization / Medical Clinic
+                  <input id="profile-org" placeholder="e.g. Seattle Senior Health" value="Seattle Senior Health" required />
+                </label>
+                <label>Clinical Role
+                  <select id="profile-role" required>
+                    <option value="Lead Nurse">Lead Nurse</option>
+                    <option value="Assisting Caregiver">Assisting Caregiver</option>
+                    <option value="Primary Physician">Primary Physician</option>
+                    <option value="Family Member">Family Member</option>
+                  </select>
+                </label>
+
+                <!-- Change Password -->
+                <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px;">
+                  <h4 style="margin: 0 0 10px; font-size: 14px; font-weight: 700; color: var(--ink);">Change Password</h4>
+                  <label>New Password
+                    <input id="profile-new-pass" type="password" placeholder="••••••••" style="font-size: 13px;" />
+                  </label>
+                </div>
+                
+                <button type="submit" class="primary" style="margin-top: 14px; width: 100%;">Save Profile Changes</button>
+                <p id="profile-edit-message" class="message" style="margin-top: 10px;"></p>
+              </form>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 4. Modals & Dialogs -->
+    <dialog id="register-patient-dialog">
+      <div class="dialog-head">
+        <h3>Register New Patient Profile</h3>
+        <button id="close-register-patient" class="close-modal-btn">Cancel</button>
+      </div>
+      <form id="register-patient-form" class="stack">
+        <label>Patient ID (lowercase, no spaces, e.g. eleanor_82)
+          <input id="reg-patient-id" placeholder="e.g. eleanor_82" required />
+        </label>
+        <label>Patient Name
+          <input id="reg-name" placeholder="e.g. Eleanor Vance" required />
+        </label>
+        <label>Age
+          <input id="reg-age" type="number" placeholder="e.g. 82" required />
+        </label>
+        <label>Relationship
+          <input id="reg-relationship" placeholder="e.g. Grandmother" required />
+        </label>
+        <label>Conditions / Diagnosis
+          <input id="reg-conditions" placeholder="e.g. CKD Stage 3, Severe Hypertension" required />
+        </label>
+        <label>Preferences (Comma-separated)
+          <textarea id="reg-preferences" placeholder="e.g. Fluid restricted to 1500ml daily, Prefers renal meals" rows="2"></textarea>
+        </label>
+        
+        <div class="routine-setup-section">
+          <h4 style="margin-bottom: 4px;">Daily Care Routine Setup</h4>
+          <span class="hint" style="display:block; margin-bottom: 8px;">Define the scheduled daily tasks in JSON list format (preset loaded below).</span>
+          <textarea id="reg-routine-json" rows="8" required></textarea>
+        </div>
+        
+        <button type="submit" class="primary" style="margin-top: 14px;">Save Patient Profile</button>
+        <p id="register-patient-message" class="message"></p>
+      </form>
+    </dialog>
+
+    <dialog id="handoff-dialog">
+      <div class="dialog-head">
+        <h3>CareOne Clinical Shift Handoff Brief</h3>
+        <div class="dialog-actions">
+          <button id="download-handoff-pdf" class="close-modal-btn">Download PDF</button>
+          <button id="close-handoff" class="close-modal-btn">Close</button>
+        </div>
+      </div>
+      <pre id="handoff-output"></pre>
+    </dialog>
+
+    <!-- AI Agent Pipeline Stepper Overlay -->
+    <dialog id="pipeline-stepper-dialog" style="border: none; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); max-width: 460px; width: 90%; padding: 24px; background: var(--surface);">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 40px; margin-bottom: 10px; animation: spin-slow 8s linear infinite; display: inline-block;">⚙️</div>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: var(--ink);">AI Agent Pipeline Running</h3>
+        <p style="font-size: 13px; color: var(--secondary); margin: 4px 0 0;">Coordinating 8 specialized clinical agents...</p>
+      </div>
+
+      <!-- Estimated Time and Progress Bar -->
+      <div style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--secondary); margin-bottom: 6px;">
+          <span>Overall Progress</span>
+          <span id="pipeline-progress-percent">0%</span>
+        </div>
+        <div style="height: 8px; background: var(--surface-2); border-radius: 99px; overflow: hidden;">
+          <div id="pipeline-progress-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--brand), var(--brand-mid)); transition: width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <!-- Agent Steps Checklist -->
+      <div id="pipeline-stepper-list" style="display: flex; flex-direction: column; gap: 12px; max-height: 280px; overflow-y: auto; padding-right: 6px;">
+        <!-- Dynamic steps with checkmarks or spinners -->
+      </div>
+    </dialog>
+
+    <script src="/static/app.js?v=9"></script>
+  </body>
+</html>

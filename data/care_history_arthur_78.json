@@ -1,0 +1,898 @@
+{
+  "history": [
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-19",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqPo3dqEZPY_yQz3d5gonCs6A2Gg8P7hpTgFEIV2LDNvxwmEWUD0hH9MZYS-sDGd07Z9Drrn1ITU3zJ1Nl9GL8khRKU5EZVEYBn4_b_JjCrOAGcwrUcJfo_8RtIz4BciiT1x8_NS_guxMLeCwHz7IkZD8Ncg=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Took 15 min walk."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3dTlIAsD7ifSZu3fmox3XchHzfkKPbkCAZKnU6RM07qq1XFqjARqQZd6e0ziCCMXusJU8qFMIFWtZDUVtcPumRtg==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3dDvxqrATc625fkGdLGCFMOAv1sxfXex2mRUohy_MjBgnFzUFVUr4i0iPiizxHoFYbdro9LIiZKBEbPavWgoKB1A==",
+          "status": "Normal",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Low",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 85% of tasks today. BP was stable at 135/82 and sugar was 112 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-20",
+      "raw_notes": [
+        {
+          "caregiver": "John Doe",
+          "text": "gAAAAABqPo3d00LymAcu568vrdX7KLXGvI7AW1Ln5i6bT8ycmyjMxzZsydtyKMP2OKt--zJGCZHYedNuCW2gQrMZdhNQQswfWxB-RhIU6oCcY8DPYlrqtcPtfrqeOwYzv_QE-c3Hc79XV2Oy7nIjR5_k7FkhNYpFRQ=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Took 15 min walk."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3dO8s-tMNKN7K1T2gAfU28cv39j1b0S-2aGcN2jHpQs2cWX99j63qwlNYxosc4J5n7tXXBZQtAN-KNf94QpZqAvw==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "John Doe",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3drS0uy6GgMSyKD4DjzYjwZW1lrcXv8HEpNR5KtxanadYijoviNZq5DsFgo57UVCqJQIkKtIWDER37NBakCzfCWQ==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "John Doe",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Low",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 90% of tasks today. BP was stable at 138/85 and sugar was 125 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-21",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqPo3dDia1d-8TppVU8Dr5mnzRDSZD4-Zac_ef-MOjK9_LWVCVLl90epdpi-neqpzRNmVXMOr8qznxdnnmzmXXiqR_PTC-u47Ot7dryn8JU6DCan7e9RNoTK32fhUz8XFZ6I4n8I6OFFRWZPFJNXy0CTcqLg=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Refused",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Refused walking exercise."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3dxwVTTmCK-SQanl4pcKb6KecUrE3h9eTobINL6OVj7aGX408e2j5DaeNpOkIGvoKQlQK3mP1P2HSL6i1rU-voGQ==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3d0oHPPjYyzmJ9xRPCpex_JS1gtSMrtVkWP115uSMbIUYP2ArbDEu_o7iBRNUVrFIFW4EHoD9naNUUVZ2iwa8P3A==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "custom",
+          "task_name": "Exercise",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was Refused."
+        }
+      ],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 75% of tasks today. BP was stable at 142/88 and sugar was 135 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-22",
+      "raw_notes": [
+        {
+          "caregiver": "John Doe",
+          "text": "gAAAAABqPo3dKdygBGlrDGbR012_0QsmoDanj58ImNcvyl0_n-FSXXoxuoLcNfJ_cUMEzwXRWgqP-rXQdmhaGL8fbFYLcy8dpCNF-PqjYOsyY1kSfaYXNavzIvSc6UQYki-UvEC3-GiqYUxruh1jtVshAOtRyLyAgw=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Refused",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Refused walking exercise."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "John Doe"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3dO9Gepw2pUZsgVfV9YEpYKVy11Qq1FZTHiEAG6HZoi1yizR-4QCc4tZJt0wE14dKEXnUZWjZBuLxCR5AQdqMlkQ==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "John Doe",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3dsMWTGLiQd4Y0PIGpxwJwsIevcO0BtjqgRVqQMrCUOwpM0A-O1D8NEjmv68i4PAFtgVqReKSCIZYsuqPVpzkBvw==",
+          "status": "Normal",
+          "explanation": "Daily vital check.",
+          "caregiver": "John Doe",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "custom",
+          "task_name": "Exercise",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was Refused."
+        }
+      ],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Low",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 80% of tasks today. BP was stable at 136/83 and sugar was 118 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-23",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqPo3dgCw-siWFlpUO9KapO38RBpsuZGUryFogXq_XxDoR2k96ZVXxQkgVbDPGrod3xMrZP5FpFeXeHjTOoulJaaSz2J0VuSH_ni_ZzJe17VsXH-Y3jDAtfM2Zb4Rc2iI-XTDW9QOIdQQh5Emdre-KImM12Q=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Skipped",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Refused",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Refused walking exercise."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Skipped",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3daUlQE7ybc2OK2mBJm8iQ4aB-V2PiyDFwAgezb8iP4EI-sKJ-wXA8tSJlhzqdrdlDTNmHW-tzN1GhgWM5zppOkw==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3dL63GMRb6psqZzm-W0dzpNrxpgDALNg2Ct7jOC-WtRZ20G7k2MmpBVNBjAfNzQZc8YEL9TISzEEPV6YUD1ZULGA==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "custom",
+          "task_name": "Meal",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was Skipped."
+        },
+        {
+          "task_id": "custom",
+          "task_name": "Exercise",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was Refused."
+        },
+        {
+          "task_id": "custom",
+          "task_name": "Medication",
+          "category": "Routine",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Task was Skipped."
+        }
+      ],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 70% of tasks today. BP was stable at 140/86 and sugar was 142 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-24",
+      "raw_notes": [
+        {
+          "caregiver": "Caregiver A",
+          "text": "gAAAAABqRJm5AJYABvBTS-d_7TNiX-j_dNdVJJeD4JNa1lgfN31Jdy5MCHGyAh_Rvlxq9EfhuUMrMo3MPvVKaOT8M24bahPI1uO9By2NHUbTyT3xVVB0x9MBLWz6MQjNRZq5raGDQJkHOlvt2XnUWP-x-jNJIOL8_rGGX7685Bdq_nm0iS5hpLCkNVNqk1nFwiyWYKQ4blHOSz4qwUkB0z5cBzJtk8FQeA==",
+          "timestamp": "10:08"
+        }
+      ],
+      "reconciled_events": [],
+      "vitals": [],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {},
+      "summary": {
+        "executive_summary": "CareOne surfaces care information only. Please consult Arthur's doctor for medical decisions.",
+        "recommended_actions": [
+          "Consult physician immediately regarding this request."
+        ],
+        "safety_alerts": [
+          "Caregiver requested out-of-scope medical advice: dosage recommendation request \u2014 out of scope"
+        ]
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-25",
+      "raw_notes": [
+        {
+          "caregiver": "Sarah Jenkins",
+          "text": "gAAAAABqPo3d3ZKC106QDdOhY0KdEZSIRCHmekhA_u4pxG6vBmd8M_Y_m-yheEmqVqwyrmWal07C7i8QzAgGDMlo4rmzWpQf7ZNWfKyRTd0JKMizSYQw7Ou08TdvL6zaz4AlHZnt5SpFNUouUgU2w4ef1F3h819ArQ=="
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "inferred_time": "08:30",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had breakfast."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "09:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Morning Metformin taken."
+        },
+        {
+          "activity": "Hydration",
+          "inferred_time": "14:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Drank water."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Finished lunch."
+        },
+        {
+          "activity": "Exercise",
+          "inferred_time": "17:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Took 15 min walk."
+        },
+        {
+          "activity": "Meal",
+          "inferred_time": "19:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Had light dinner."
+        },
+        {
+          "activity": "Medication",
+          "inferred_time": "21:00",
+          "status": "Completed",
+          "caregivers": [
+            "Sarah Jenkins"
+          ],
+          "notes": "Evening medications taken."
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqPo3dX4nzpsVQQeaw6HsH7TUSJj5GzS2nFfWG25q2sLE3Pi8IRP_SAzJ3YUQt9sV5HYjmv5qzvp_Cs9fNjMrE4xtHwQ==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        },
+        {
+          "vital_type": "Blood Glucose",
+          "value_raw": "gAAAAABqPo3dP1ykYYzBf_yYQi1D26KBQR15lGSlewzUSbD2PtUSALKEl5V8gWS_ude0ZMqSECz47nO4CIIPd1h2olnA-asj-Q==",
+          "status": "Elevated",
+          "explanation": "Daily vital check.",
+          "caregiver": "Sarah Jenkins",
+          "timestamp": "09:00"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [],
+      "trends": {},
+      "risk_assessment": {
+        "risk_level": "Low",
+        "description": "Occasional task refusal and elevated vitals.",
+        "confidence": 0.9,
+        "reasoning": "Determined from completion rate and BP levels."
+      },
+      "summary": {
+        "executive_summary": "Arthur completed 85% of tasks today. BP was stable at 138/84 and sugar was 130 mg/dL.",
+        "recommended_actions": [
+          "Monitor his physical exercise completion."
+        ],
+        "safety_alerts": []
+      }
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-06-28",
+      "raw_notes": [
+        {
+          "caregiver": "Caregiver A",
+          "text": "gAAAAABqQKT32LM0MB1enI4kjxGwHm2gh6iROh2X2cuaZ8a7BjFmOTOFOeKJ-5B1M5H-S96IXAvX0CRMGM_SE0o0qvhcRJTG3z_B-49a2dCf7KXjK8KgDUKt-69nk3_IZ8856_EDBwz9onLxDZV6Ou0u648xS0KUrMcGB8gSX5kT4jhfGaBtj1O92LpejEto7VBTz0KxPWFDfraful5hmT6sPeHwUzI-XdtTPHrqL_IHTA8KGhR5jl0mX0ZNxitVCmKqmmPpgQlwcttDHCutgavGyIHoZfSqIw==",
+          "timestamp": "09:55"
+        },
+        {
+          "caregiver": "Caregiver A",
+          "text": "gAAAAABqQKT3eC2Bfs3Tc19PoMpkIYNw2DyNd7XgNEmM52SC7R2Qe0EtfwgVW6z-YAWLdmrVlRREmqT1Ig39mheHJLPic7XvO9A6BHMgq1QalHt0Bi76n9o0oEpq1gr6ra4P4_8eTI0AkE8VaFRhjcpLF82LlBynUu_UQsMKjOVCW7Nre4hakpeUR7NP_7o03pZsZ8W1MLr6HIc9U7IFmiL_dNM-IPyWiy0ki7ivyVN9xkXsHqSh8hMEiBUM6pPzod7DfuGqOhJvMftJH3gvu5eVasK8rgSbGQ==",
+          "timestamp": "10:00"
+        },
+        {
+          "caregiver": "Caregiver A",
+          "text": "gAAAAABqQKT3YZ_Su2fHbc4gU3JrHwdJmGhRBobGqEMN-is4JIagPCbO2j_3DFHzgcOmiRs5PJzbsZHa5vP1s3yJVdufMmM6io576FU_8EIid-QaB-o5p4ifar6GEBmu0mqomDdk6wsNzMkB7NNOuPvO2HUA-40JKI70E39yQNXNUy2L7LSdtjQTTtcX54URCWaIqoSGDoFqlGUM8BlS0nMPbHaAd_5_SOr2QobZfSkc_wxPn7TEVK4JeMpTsquAU7Apc8Bdje_L",
+          "timestamp": "10:07"
+        }
+      ],
+      "reconciled_events": [
+        {
+          "activity": "Meal",
+          "time_raw": "lunch",
+          "inferred_time": "13:00",
+          "status": "Completed",
+          "notes": "Lunch was reported.",
+          "caregivers": [
+            "Caregiver A"
+          ]
+        },
+        {
+          "activity": "Medication",
+          "time_raw": "morning meds",
+          "inferred_time": "09:00",
+          "status": "Delayed",
+          "notes": "Morning medications were reported.",
+          "caregivers": [
+            "Caregiver A"
+          ]
+        },
+        {
+          "activity": "Exercise",
+          "time_raw": "exercise",
+          "inferred_time": "17:00",
+          "status": "Refused",
+          "notes": "Walk/exercise context logged.",
+          "caregivers": [
+            "Caregiver A"
+          ]
+        },
+        {
+          "activity": "Medical check",
+          "time_raw": "at check-in",
+          "inferred_time": "10:07",
+          "status": "Completed",
+          "notes": "Measured Blood Pressure: 145/92 (Status: High/Alert - Blood pressure is elevated for an adult baseline.)",
+          "caregivers": [
+            "Caregiver A"
+          ]
+        }
+      ],
+      "vitals": [
+        {
+          "vital_type": "Blood Pressure",
+          "value_raw": "gAAAAABqQKT3U7pLKcDLVaXPcBGNmuZoVtPbExaX0RNHGdQrPSmKZ3-xDI5KdLFIF8Z9jpev-2TaZnmLGG8ZNdtLVRwAaEClnA==",
+          "status": "High/Alert",
+          "explanation": "Blood pressure is elevated for an adult baseline.",
+          "caregiver": "Caregiver A",
+          "timestamp": "10:07"
+        }
+      ],
+      "conflicts": [],
+      "interventions": [],
+      "detected_gaps": [
+        {
+          "task_id": "breakfast",
+          "task_name": "Breakfast",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Breakfast is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "morning_meds",
+          "task_name": "Morning Medications",
+          "category": "Medication",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Morning Medications is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "lunch",
+          "task_name": "Lunch",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Lunch is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "afternoon_hydration",
+          "task_name": "Afternoon Hydration",
+          "category": "Hydration",
+          "importance": "Medium",
+          "confidence_score": 0.85,
+          "explanation": "Afternoon Hydration is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "evening_walk",
+          "task_name": "Evening Walk",
+          "category": "Exercise",
+          "importance": "Medium",
+          "confidence_score": 0.95,
+          "explanation": "Evening Walk is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "dinner",
+          "task_name": "Dinner",
+          "category": "Meal",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Dinner is unconfirmed in today's caregiver notes."
+        },
+        {
+          "task_id": "evening_meds",
+          "task_name": "Evening Medications",
+          "category": "Medication",
+          "importance": "High",
+          "confidence_score": 0.95,
+          "explanation": "Evening Medications is unconfirmed in today's caregiver notes."
+        }
+      ],
+      "trends": {
+        "completion_rates": [],
+        "observed_trends": [
+          {
+            "trend_type": "Compliance",
+            "observation": "Fluid restriction warning triggered twice for Eleanor.",
+            "impact": "Exceeding fluid limits increases swelling risk."
+          }
+        ],
+        "summary_insight": "Elective trend analysis processed 7 days of logs. Fluid restrictions need stricter check-ins.",
+        "confidence_score": 0.9,
+        "reasoning_path": "Scanned last 7 days of vitals records for patterns in systolic BP and fluid targets."
+      },
+      "risk_assessment": {
+        "risk_level": "Medium",
+        "description": "Systolic BP above 140 mmHg and unconfirmed medication tasks logged.",
+        "confidence_score": 0.92,
+        "reasoning_path": "Analyzed vital indicators and daily routine gap logs for safety assessment."
+      },
+      "summary": {
+        "executive_summary": "All caregiver logs reconciled successfully. Care plan shows 0 unconfirmed task(s) remaining.",
+        "recommended_actions": [
+          "Review unconfirmed high-importance tasks before shift end.",
+          "Verify vital levels and consult the doctor for clinical concerns."
+        ],
+        "safety_alerts": [
+          "No critical care gaps detected."
+        ],
+        "confidence_score": 0.95,
+        "reasoning_path": "Synthesized summary metrics from timeline, gaps list, and vital warnings."
+      }
+    }
+  ]
+}
