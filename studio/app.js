@@ -2044,6 +2044,37 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.prepend(banner);
   }
 
+  // Mobile navigation drawer toggle
+  const burger = document.getElementById("mobile-hamburger-btn");
+  const sidebarEl = document.querySelector(".sidebar");
+  const backdropEl = document.getElementById("sidebar-backdrop");
+
+  if (burger && sidebarEl && backdropEl) {
+    burger.addEventListener("click", () => {
+      sidebarEl.classList.add("visible");
+      backdropEl.classList.add("visible");
+    });
+    backdropEl.addEventListener("click", () => {
+      sidebarEl.classList.remove("visible");
+      backdropEl.classList.remove("visible");
+    });
+    // Close on any tab link click
+    document.querySelectorAll(".sidebar .nav-item").forEach(item => {
+      item.addEventListener("click", () => {
+        sidebarEl.classList.remove("visible");
+        backdropEl.classList.remove("visible");
+      });
+    });
+    // Close on logout click
+    const logoutBtn = document.getElementById("btn-logout");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        sidebarEl.classList.remove("visible");
+        backdropEl.classList.remove("visible");
+      });
+    }
+  }
+
   // Theme Loader (Light/Dark mode)
   const savedTheme = localStorage.getItem("theme") || "light";
   const isDark = (savedTheme === "dark" || localStorage.getItem("settings-theme") === "dark");
