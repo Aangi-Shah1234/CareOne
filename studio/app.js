@@ -1919,6 +1919,7 @@ async function handleLogin(event) {
     });
     
     state.user = result.user;
+    sessionStorage.setItem("user", JSON.stringify(result.user));
     $("#user-display-name").textContent = result.user.name;
     $("#user-display-role").textContent = result.user.role;
     $("#caregiver-input").value = result.user.name;
@@ -1960,6 +1961,7 @@ async function handleSignup(event) {
 
 function handleLogout() {
   state.user = null;
+  sessionStorage.removeItem("user");
   state.activePatientId = null;
   state.data = null;
   loadPatients();
@@ -2042,6 +2044,19 @@ const TEMPLATES = {
 
 // Event Bindings
 document.addEventListener("DOMContentLoaded", () => {
+  // Restore session from sessionStorage to survive page refresh
+  const savedUser = sessionStorage.getItem("user");
+  if (savedUser) {
+    try {
+      state.user = JSON.parse(savedUser);
+      $("#user-display-name").textContent = state.user.name;
+      $("#user-display-role").textContent = state.user.role;
+      $("#caregiver-input").value = state.user.name;
+    } catch (e) {
+      sessionStorage.removeItem("user");
+    }
+  }
+
   if (window.location.protocol === "file:") {
     const banner = document.createElement("div");
     banner.className = "file-warning";
