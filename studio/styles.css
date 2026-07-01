@@ -2801,3 +2801,33 @@ body.high-contrast-theme {
   --brand-light-text: #00ff00 !important;
 }
 
+/* Additional mobile viewport fixes */
+@media (max-width: 768px) {
+  .patient-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-header-container {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+  }
+  .landing-nav-actions {
+    gap: 8px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .landing-nav-btn {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    height: 32px !important;
+    line-height: 1.2 !important;
+  }
+  .theme-switch {
+    transform: scale(0.85) !important;
+  }
+}
+
