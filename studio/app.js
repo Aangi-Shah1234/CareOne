@@ -1923,6 +1923,8 @@ async function handleLogin(event) {
     $("#user-display-role").textContent = result.user.role;
     $("#caregiver-input").value = result.user.name;
     
+    await loadPatients();
+    
     // Redirect to redirectAfterLogin if set, otherwise default to portal-hub (Studio)
     const target = state.redirectAfterLogin || "/studio";
     state.redirectAfterLogin = null;
@@ -1960,6 +1962,7 @@ function handleLogout() {
   state.user = null;
   state.activePatientId = null;
   state.data = null;
+  loadPatients();
   navigateTo("/");
 }
 
