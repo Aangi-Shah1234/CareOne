@@ -1,33 +1,37 @@
 # CareOne
-### Clinical-Grade Multi-Agent Care Coordination & Longitudinal Analytics
-*Kaggle AI Agents Capstone Project — "Agents for Good" (Healthcare/Caregiving) Track*
-
-CareOne is a clinical-grade care coordination platform that uses a multi-agent system to turn messy, natural-language caregiver notes into structured timelines, vital audits, safety risk assessments, and shift handoffs.
+Clinical-Grade Multi-Agent Care Coordination & Longitudinal Analytics
+Kaggle AI Agents Capstone Project — "Agents for Good" (Healthcare/Caregiving) Track
 
 ---
 
-## 1. Project Overview
+## 1. Problem
 
-Caregiving is often chaotic, with critical patient details scattered across text messages, paper logs, and verbal reports. CareOne solves this by serving as an intelligent, automated eldercare EMR and coordination hub.
-
-It orchestrates a specialized **8-Agent Pipeline** powered by `gemini-2.5-flash` to parse shift notes, extract encrypted vitals, audit safety compliance, cross-reference scheduled routines, and compile structured daily clinical handoffs.
-
----
-
-## 2. Core Features
-
-* **8-Agent Clinical Orchestration**: Employs Pydantic structured output schemas via the Google GenAI SDK to cascade clinical reasoning and metrics down a pipeline of specialized agents (Parser, Vitals, Reconciler, Refusal, Gaps, Risk, Trends, Summary).
-* **PHI Symmetrical Encryption**: Symmetrically encrypts all patient notes, vitals, and logs at rest using AES-based Fernet cryptography (`cryptography.fernet`) to guarantee HIPAA compliance.
-* **Longitudinal Analytics**: Renders interactive SVG-based charts tracking patient wellness indicators (Routine Adherence, BP trends, Heart Rate, Fluid Intake, Medication Adherence, and computed Safety Risk Index).
-* **Fluid Responsiveness**: Premium glassmorphism design fully optimized for all viewports (from 1920px Desktop down to 320px mobile screens) with no overflow.
-* **Full Auth Suite & Reset**: Secure registration, login, logout, and password reset syncing live to MongoDB Atlas.
-* **Clinical Handoff Exports**: Instantly compiles patient logs and shift records into printable PDFs and styled Microsoft Word document reports (`.doc`).
-* **Robust DB Fallback**: Seamlessly connects to MongoDB Atlas with an automated local JSON fallback when offline.
+Eldercare coordination is often fragmented and chaotic. Family members and professional caregivers log patient observations across text messages, notebooks, and verbal handoffs. This unstructured format results in:
+* **Missed Medical Activities**: Critical duties like medication timings, food/fluid intake, and symptom monitoring are frequently unconfirmed.
+* **Safety Gaps**: High-priority safety risks (e.g., elevated blood pressure, abnormal glucose levels, mobility flags) are ignored or not cross-referenced against historical trends.
+* **Lack of Observability**: Families and care coordinators lack access to structured longitudinal trends, compliance summaries, or secure EMR systems.
+* **Regulatory Compliance Issues**: Patient health information (PHI) is often transmitted over insecure channels, violating privacy and security standards.
 
 ---
 
-## 3. Architecture & Data Flow Diagram
+## 2. Solution
 
+CareOne solves this coordination challenge by serving as an automated, intelligent EMR and coordination hub.
+
+### Core Capabilities:
+* **Multi-Agent Orchestration**: Directs caregiver text entries through a pipeline of specialized AI agents that extract vitals, audit routines, compute safety indexes, and synthesize narrative briefs.
+* **HIPAA-Compliant PHI Security**: Symmetrically encrypts all patient data and vital readings at rest using AES-based Fernet cryptography.
+* **EMR Analytics**: Generates real-time, interactive SVG charts monitoring routine compliance, blood pressure, heart rate, hydration, medication logs, and safety scores.
+* **Clinical Handoff Documentation**: Generates structured PDF and Microsoft Word summaries for clinical handoffs.
+* **Robust Database Sync**: Syncs data to MongoDB Atlas with an automatic local JSON file fallback for offline availability.
+
+---
+
+## 3. Architecture
+
+CareOne operates on a sequential, multi-agent pipeline using Pydantic structured output validation.
+
+### Architecture Flowchart:
 ```
                         ┌─────────────────────────────────┐
                         │      FastAPI Studio Dashboard   │
@@ -69,33 +73,10 @@ It orchestrates a specialized **8-Agent Pipeline** powered by `gemini-2.5-flash`
 
 ---
 
-## 4. Tech Stack
+## 4. Instructions for Setup
 
-* **Frontend**: HTML5, Vanilla CSS3 (Custom Variables, glassmorphism, responsive media viewports), ES6 JavaScript (Client-side routing, SVG graphing).
-* **Backend**: FastAPI, Gradio (interactive sandbox console), Pydantic (data structures validation).
-* **Database**: MongoDB Atlas, local JSON fallback engine.
-* **AI Engine**: Google GenAI SDK (`gemini-2.5-flash`).
-* **Security & Formatting**: `cryptography.fernet`, `fpdf2`.
-
----
-
-## 5. Screenshots
-
-### Platform Landing Hub
-![Platform Landing](docs/screenshots/landing_hero.png)
-
-### Trusted Care Circles Section
-![Landing Testimonials](docs/screenshots/landing_testimonials.png)
-
-### Care Directory & Patient Profiles
-![Patient Directory](docs/screenshots/patient_directory.png)
-
----
-
-## 6. Setup & Installation
-
-### 1. Prerequisite
-Ensure you have Python 3.10+ installed.
+### 1. Prerequisites
+Ensure Python 3.10+ is installed on your system.
 
 ### 2. Install Packages
 ```bash
@@ -112,7 +93,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Environment Variables
-Create a `.env` file in your root directory:
+Create a `.env` file in the project root folder:
 ```env
 # 1. Google Gemini configuration
 GEMINI_API_KEY="your-api-key-here"
@@ -125,32 +106,19 @@ MONGO_DB_NAME="CareOne"
 CAREONE_LIVE_LLM=1 # Set to 1 for live Gemini models, 0 for fast local mock responses
 ```
 
----
-
-## 7. Running the Platform
-
-### Launch SaaS Studio (Recommended)
+### 4. Running the Dashboard
 ```bash
 python web_app.py
 ```
-*Access the platform dashboard at:* **`http://127.0.0.1:8501`**
+*Access the SaaS studio dashboard at:* **`http://127.0.0.1:8501`**
 
-### Launch Gradio Playback Sandbox
+### 5. Running the Sandbox Console
 ```bash
 python app.py
 ```
-*Access the sandbox console at:* **`http://localhost:7860`**
+*Access the sandbox at:* **`http://localhost:7860`**
 
-### Run Unit & Integration Tests
+### 6. Executing Unit Tests
 ```bash
 python -m unittest test_pipeline.py
 ```
-
----
-
-## 8. Future Roadmap
-
-* **AI SMS & WhatsApp Alerts**: Connect immediate gap alerts to Twilio or WhatsApp Business APIs to notify caregivers instantly on their mobile phones.
-* **Clinical Speech Transcription**: Enable voice-note transcription directly inside the caregiver input form using Gemini's audio-understanding capabilities.
-* **HL7 / FHIR Integration**: Enable seamless sync with existing clinical EHR systems (Epic, Cerner) using standardized health records protocols.
-* **Offline-First Synchronization**: Build service workers that allow offline local cache modification when internet connections fail, syncing to Atlas automatically once re-established.
