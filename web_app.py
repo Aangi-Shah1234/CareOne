@@ -748,7 +748,8 @@ def get_history(patient_id: str = "ananya_78", days: int = 7) -> list[dict[str, 
                 txt = note.get("text", note.get("note", ""))
             raw_notes_decrypted.append({
                 "caregiver": note.get("caregiver"),
-                "note": txt
+                "note": txt,
+                "timestamp": note.get("timestamp")
             })
             
         vitals_decrypted = []
@@ -760,7 +761,8 @@ def get_history(patient_id: str = "ananya_78", days: int = 7) -> list[dict[str, 
             vitals_decrypted.append({
                 "vital_type": v.get("vital_type"),
                 "value_raw": val,
-                "status": v.get("status")
+                "status": v.get("status"),
+                "timestamp": v.get("timestamp")
             })
 
         decrypted_history.append({
