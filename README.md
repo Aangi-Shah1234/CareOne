@@ -1,6 +1,6 @@
 # CareOne
 
-**AI-powered multi-agent platform for eldercare coordination, clinical note analysis, patient monitoring, and caregiver collaboration.**
+AI-powered multi-agent platform for eldercare coordination, clinical note analysis, patient monitoring, and caregiver collaboration.
 
 CareOne transforms unstructured caregiver notes into structured patient insights using a collaborative pipeline of specialized AI agents. The platform assists caregivers by extracting vitals, identifying care gaps, assessing potential risks, generating concise summaries, and maintaining a longitudinal patient record through an intuitive web interface.
 
@@ -304,4 +304,4 @@ Add screenshots after deployment.
 
 # Author
 
-**Aangi Shah**
+Aangi Shah
