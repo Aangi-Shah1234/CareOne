@@ -2064,35 +2064,56 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.prepend(banner);
   }
 
+  const landingMenuBtn = document.getElementById("landing-mobile-menu-btn");
+  const landingMenu = document.getElementById("landing-mobile-menu");
+  if (landingMenuBtn && landingMenu) {
+    const closeLandingMenu = () => {
+      landingMenu.classList.remove("open");
+      landingMenuBtn.setAttribute("aria-expanded", "false");
+    };
+    landingMenuBtn.addEventListener("click", () => {
+      const isOpen = landingMenu.classList.toggle("open");
+      landingMenuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+    landingMenu.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", closeLandingMenu);
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) closeLandingMenu();
+    });
+  }
+
   // Mobile navigation drawer toggle
   const burger = document.getElementById("mobile-hamburger-btn");
   const sidebarEl = document.querySelector(".sidebar");
   const backdropEl = document.getElementById("sidebar-backdrop");
 
   if (burger && sidebarEl && backdropEl) {
+    const closeWorkspaceMenu = () => {
+      sidebarEl.classList.remove("visible");
+      backdropEl.classList.remove("visible");
+      backdropEl.style.display = "none";
+      burger.setAttribute("aria-expanded", "false");
+    };
     burger.addEventListener("click", () => {
       sidebarEl.classList.add("visible");
       backdropEl.classList.add("visible");
+      backdropEl.style.display = "block";
+      burger.setAttribute("aria-expanded", "true");
     });
-    backdropEl.addEventListener("click", () => {
-      sidebarEl.classList.remove("visible");
-      backdropEl.classList.remove("visible");
-    });
+    backdropEl.addEventListener("click", closeWorkspaceMenu);
     // Close on any tab link click
     document.querySelectorAll(".sidebar .nav-item").forEach(item => {
-      item.addEventListener("click", () => {
-        sidebarEl.classList.remove("visible");
-        backdropEl.classList.remove("visible");
-      });
+      item.addEventListener("click", closeWorkspaceMenu);
     });
     // Close on logout click
     const logoutBtn = document.getElementById("btn-logout");
     if (logoutBtn) {
-      logoutBtn.addEventListener("click", () => {
-        sidebarEl.classList.remove("visible");
-        backdropEl.classList.remove("visible");
-      });
+      logoutBtn.addEventListener("click", closeWorkspaceMenu);
     }
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeWorkspaceMenu();
+    });
   }
 
   // Theme Loader (Light/Dark mode)

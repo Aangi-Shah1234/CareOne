@@ -1,0 +1,51 @@
+{
+  "patient_name": "Anj",
+  "age": 86,
+  "conditions": "Cancer",
+  "preferences": [
+    "Prefers warm herbal teas in the afternoon.",
+    "Requires comfortable seating during vitals check."
+  ],
+  "daily_routine": [
+    {
+      "task_id": "breakfast",
+      "name": "Breakfast",
+      "time_expected": "08:30",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Light breakfast and hydration."
+    },
+    {
+      "task_id": "morning_meds",
+      "name": "Cancer Medication",
+      "time_expected": "09:00",
+      "category": "Medication",
+      "importance": "High",
+      "description": "Administer daily medication dosage."
+    },
+    {
+      "task_id": "afternoon_rest",
+      "name": "Afternoon Rest",
+      "time_expected": "14:00",
+      "category": "Routine",
+      "importance": "Medium",
+      "description": "Ensure at least 2 hours of quiet sleep."
+    },
+    {
+      "task_id": "evening_walk",
+      "name": "Short Walk",
+      "time_expected": "17:00",
+      "category": "Exercise",
+      "importance": "Medium",
+      "description": "Assisted short walk in the hallway."
+    },
+    {
+      "task_id": "dinner",
+      "name": "Dinner",
+      "time_expected": "19:00",
+      "category": "Meal",
+      "importance": "High",
+      "description": "Light, highly digestible dinner."
+    }
+  ]
+}
