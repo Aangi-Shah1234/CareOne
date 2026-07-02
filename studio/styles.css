@@ -1127,9 +1127,11 @@ pre {
 .landing-header {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -1212,6 +1214,7 @@ pre {
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 20px;
+  padding-top: 100px !important; /* Offset for fixed landing header */
   display: flex;
   flex-direction: column;
   gap: 24px;

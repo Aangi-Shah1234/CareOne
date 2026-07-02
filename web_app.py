@@ -122,9 +122,25 @@ def build_kpis(record: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
     vitals = record.get("vitals", [])
     gaps = record.get("detected_gaps", [])
     conflicts = record.get("conflicts", [])
-    completed = sum(1 for ev in events if ev.get("status") in ["Completed", "Delayed"])
     routine = plan.get("daily_routine", [])
     total = max(len(routine), 1)
+    
+    # Only count completed events that correspond to a scheduled daily routine activity
+    completed = 0
+    for task in routine:
+        task_id = task.get("task_id")
+        task_name = str(task.get("name", "")).lower()
+        matching_event = None
+        for ev in events:
+            ev_task_id = ev.get("task_id")
+            ev_activity = str(ev.get("activity", "")).lower()
+            if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name):
+                if ev.get("status") in ["Completed", "Delayed"]:
+                    matching_event = ev
+                    break
+        if matching_event:
+            completed += 1
+
     return {
         "completion": int((completed / total) * 100),
         "completed": completed,
@@ -175,11 +191,22 @@ def build_analytics(patient_id: str, history: list[dict[str, Any]]) -> dict[str,
     rows = []
     bp_points = []
     for log in sorted(history, key=lambda row: row.get("date", "")):
-        done = sum(
-            1
-            for event in log.get("reconciled_events", [])
-            if event.get("status") in ["Completed", "Delayed"]
-        )
+        done = 0
+        log_events = log.get("reconciled_events", [])
+        for task in routine:
+            task_id = task.get("task_id")
+            task_name = str(task.get("name", "")).lower()
+            matching_event = None
+            for ev in log_events:
+                ev_task_id = ev.get("task_id")
+                ev_activity = str(ev.get("activity", "")).lower()
+                if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name):
+                    if ev.get("status") in ["Completed", "Delayed"]:
+                        matching_event = ev
+                        break
+            if matching_event:
+                done += 1
+
         rows.append(
             {
                 "date": log.get("date", ""),

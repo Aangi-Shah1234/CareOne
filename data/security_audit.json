@@ -614,5 +614,278 @@
     "role": "system",
     "action": "Saved daily log record for 2026-06-24",
     "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.572155",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.613309",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.635872",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.876571",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.928714",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.966561",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:52.983610",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:46:53.027607",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:09.749455",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:09.760046",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:09.779199",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:09.927860",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:09.990601",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:10.044341",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:10.064487",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:10.115292",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:44.975958",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:44.984553",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.004950",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.173356",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.203384",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.256525",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.277547",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:49:45.356965",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:25.991166",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.000481",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.019412",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.058616",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.096813",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.118172",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:26.148792",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.182792",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.191631",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.221544",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.381934",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.412711",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.463646",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved care plan for patient arthur_78",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.485225",
+    "username": "system",
+    "role": "system",
+    "action": "Retrieved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
+  },
+  {
+    "timestamp": "2026-07-02T09:50:51.531395",
+    "username": "system",
+    "role": "system",
+    "action": "Saved daily log record for 2026-06-24",
+    "patient_id": "arthur_78"
   }
 ]
