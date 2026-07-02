@@ -1200,7 +1200,7 @@ async function renderTraceEvents(agentFilter) {
       const arrow = i < agentKeys.length - 1 ? `<div style="font-size: 20px; color: var(--muted); padding: 0 4px;">→</div>` : "";
       
       return `
-        <div onclick="renderTraceEvents('${key}')" style="cursor: pointer; text-align: center; padding: 10px 14px; border-radius: 12px; background: ${isActive ? "var(--brand-light)" : "#ffffff"}; border: 1px solid ${isActive ? "var(--brand)" : "var(--line)"}; min-width: 90px; transition: all 0.2s;">
+        <div onclick="renderTraceEvents('${key}')" style="cursor: pointer; text-align: center; padding: 10px 14px; border-radius: 12px; background: ${isActive ? "var(--brand-light)" : "var(--surface-2)"}; border: 1px solid ${isActive ? "var(--brand)" : "var(--line)"}; min-width: 90px; transition: all 0.2s;">
           <strong style="font-size: 13px; color: ${isActive ? "var(--brand-light-text)" : "var(--ink)"}; display: block;">${agentDisplayNames[key]}</strong>
           <span style="font-size: 10px; color: var(--muted); display: block; margin-top: 2px;">${details.duration_ms}ms</span>
           <span style="font-size: 10px; color: var(--brand); font-weight: 600; display: block; margin-top: 2px;">${Math.round(details.confidence_score * 100)}% Conf</span>
@@ -1382,7 +1382,7 @@ function renderMemoryTimeline(keyword) {
       const caregiversText = item.caregivers.length > 0 ? ` · logged by ${item.caregivers.join(", ")}` : "";
       return `
         <div style="position: relative; padding-bottom: 20px; border-left: 2px solid var(--line); margin-left: 12px; padding-left: 24px;">
-          <div style="position: absolute; left: -11px; top: 0; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; border: 2px solid ${item.color}; display: grid; place-items: center; font-size: 11px; color: ${item.color};">
+          <div style="position: absolute; left: -11px; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--surface); border: 2px solid ${item.color}; display: grid; place-items: center; font-size: 11px; color: ${item.color};">
             <i class="${item.icon}"></i>
           </div>
           <div style="font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px;">
@@ -1399,7 +1399,7 @@ function renderMemoryTimeline(keyword) {
     }).join("");
 
     return `
-      <div class="panel" style="margin-bottom: 20px; background: #ffffff;">
+      <div class="panel" style="margin-bottom: 20px;">
         <div style="display:flex; justify-content:space-between; align-items:center; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 14px;">
           <h3 style="font-size: 16px; margin: 0; color: var(--brand); font-weight: 700;">${dateStr}</h3>
           <span style="font-size:11px; font-weight:600; background:var(--surface-2); padding:4px 8px; border-radius:99px; color:var(--secondary);">${day.date}</span>
@@ -1516,7 +1516,7 @@ function renderNotifications() {
     const badgeBg = a.severity === "high" ? "var(--warning-light)" : a.severity === "medium" ? "#fffbeb" : "var(--surface-2)";
     
     return `
-      <div class="panel" style="display: flex; gap: 16px; background: #ffffff; margin-bottom: 12px; border-left: 4px solid ${badgeColor}; padding: 18px; align-items: flex-start;">
+      <div class="panel" style="display: flex; gap: 16px; margin-bottom: 12px; border-left: 4px solid ${badgeColor}; padding: 18px; align-items: flex-start;">
         <div style="width: 38px; height: 38px; border-radius: 50%; background: ${badgeBg}; color: ${badgeColor}; display: grid; place-items: center; font-size: 20px; flex-shrink: 0;">
           <i class="${a.icon}"></i>
         </div>
