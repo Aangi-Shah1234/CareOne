@@ -3493,31 +3493,6 @@ dialog > pre,
     background: rgba(28, 35, 30, 0.96);
   }
 
-  .mobile-brand-lockup {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 0;
-  }
-
-  .mobile-brand-lockup strong {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--ink);
-  }
-
-  .mobile-brand-lockup .brand-mark {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: grid;
-    place-items: center;
-    background: var(--brand-light);
-    color: var(--brand-light-text);
-    font-size: 15px;
-    flex: 0 0 auto;
-  }
-
   .mobile-menu-trigger {
     display: inline-flex !important;
     width: 44px;
