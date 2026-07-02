@@ -3490,42 +3490,6 @@ dialog > pre,
     background: rgba(28, 35, 30, 0.96);
   }
 
-  .mobile-brand-lockup {
-    display: flex;
-    align-items: center;
-    min-width: 0;
-    gap: 10px;
-  }
-
-  .mobile-brand-mark {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    display: grid;
-    place-items: center;
-    background: var(--brand);
-    color: #fff;
-    flex: 0 0 auto;
-  }
-
-  .mobile-brand-lockup strong {
-    display: block;
-    color: var(--ink);
-    font-size: 15px;
-    line-height: 1.1;
-  }
-
-  .mobile-brand-lockup span:not(.mobile-brand-mark) {
-    display: block;
-    color: var(--secondary);
-    font-size: 11px;
-    line-height: 1.2;
-  }
-
-  .mobile-brand-title {
-    display: none;
-  }
-
   .mobile-menu-trigger {
     display: inline-flex !important;
     width: 44px;

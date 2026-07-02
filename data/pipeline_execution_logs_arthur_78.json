@@ -268,10 +268,10 @@
   {
     "patient_id": "arthur_78",
     "date": "2026-06-24",
-    "timestamp": "2026-07-02T09:50:51.552187+05:30",
+    "timestamp": "2026-07-02T10:22:39.862222+05:30",
     "trace": {
       "pipeline_metadata": {
-        "timestamp": "2026-07-02T09:50:51.512484+05:30",
+        "timestamp": "2026-07-02T10:22:39.827101+05:30",
         "patient_id": "arthur_78",
         "date_processed": "2026-06-24",
         "caregiver": "Caregiver A",

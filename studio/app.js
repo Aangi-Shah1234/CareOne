@@ -319,7 +319,8 @@ function selectPatient(patientId) {
     const safetyTextEl = $("#safety-disclaimer-text");
     
     if (titleEl) titleEl.textContent = p.name;
-    if (relationEl) relationEl.textContent = `${p.relationship}'s Care Dashboard`;
+    const relation = p.relationship || "Patient";
+    if (relationEl) relationEl.textContent = `${relation}'s Care Dashboard`;
     if (safetyTextEl) safetyTextEl.textContent = `CareOne surfaces care information only. Please consult ${p.name}'s doctor for medical decisions.`;
     
     // Reset Ask CareOne Card
@@ -445,7 +446,11 @@ function renderState() {
       checkList.innerHTML = `<span style="font-size:12px; color:var(--muted)">No scheduled tasks defined.</span>`;
     } else {
       checkList.innerHTML = routine.map((task) => {
-        const ev = record.reconciled_events.find((e) => e.task_id === task.task_id || e.activity.toLowerCase() === task.name.toLowerCase());
+        const ev = record.reconciled_events.find((e) => 
+          e.task_id === task.task_id || 
+          e.activity.toLowerCase() === task.name.toLowerCase() ||
+          (task.category && e.activity.toLowerCase() === task.category.toLowerCase())
+        );
         const isDone = ev ? ev.status === "Completed" || ev.status === "Delayed" : false;
         return `
           <div class="routine-item">

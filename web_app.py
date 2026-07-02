@@ -134,7 +134,7 @@ def build_kpis(record: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
         for ev in events:
             ev_task_id = ev.get("task_id")
             ev_activity = str(ev.get("activity", "")).lower()
-            if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name):
+            if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name) or (task.get("category") and ev_activity == str(task.get("category")).lower()):
                 if ev.get("status") in ["Completed", "Delayed"]:
                     matching_event = ev
                     break
@@ -200,7 +200,7 @@ def build_analytics(patient_id: str, history: list[dict[str, Any]]) -> dict[str,
             for ev in log_events:
                 ev_task_id = ev.get("task_id")
                 ev_activity = str(ev.get("activity", "")).lower()
-                if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name):
+                if (ev_task_id and ev_task_id == task_id) or (ev_activity == task_name) or (task.get("category") and ev_activity == str(task.get("category")).lower()):
                     if ev.get("status") in ["Completed", "Delayed"]:
                         matching_event = ev
                         break
