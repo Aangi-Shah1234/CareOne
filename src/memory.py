@@ -83,6 +83,10 @@ def ensure_fallback_files(patient_id):
     """Seed local fallback files for the selected patient if they do not exist."""
     os.makedirs(DATA_DIR, exist_ok=True)
     
+    # Only seed default files for demo patients
+    if patient_id not in ["arthur_78", "eleanor_82", "anj_86"]:
+        return
+        
     plan_path = get_care_plan_path(patient_id)
     history_path = get_care_history_path(patient_id)
     events_path = get_agent_events_path(patient_id)
@@ -325,11 +329,14 @@ def load_care_plan(patient_id: str):
             if patient:
                 patient.pop("_id", None)
                 return {
+                    "patient_id": patient.get("patient_id", patient_id),
                     "patient_name": patient.get("name"),
                     "age": patient.get("age"),
+                    "relationship": patient.get("relationship", "Family"),
                     "conditions": patient.get("conditions", ""),
                     "preferences": patient.get("preferences", []),
-                    "daily_routine": patient.get("daily_routine", [])
+                    "daily_routine": patient.get("daily_routine", []),
+                    "created_by": patient.get("created_by")
                 }
         except Exception as e:
             print(f"[MongoDB] Error loading care plan: {e}. Falling back.")
@@ -358,8 +365,10 @@ def save_care_plan(patient_id: str, plan: dict):
             db.patients.update_one(
                 {"patient_id": patient_id},
                 {"$set": {
+                    "patient_id": patient_id,
                     "name": plan.get("patient_name"),
                     "age": plan.get("age"),
+                    "relationship": plan.get("relationship", "Family"),
                     "conditions": plan.get("conditions", ""),
                     "preferences": plan.get("preferences", []),
                     "daily_routine": plan.get("daily_routine", []),
