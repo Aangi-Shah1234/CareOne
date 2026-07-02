@@ -81,6 +81,18 @@ function navigateTo(path) {
   handleRouting();
 }
 
+function closeWorkspaceDrawer() {
+  const sidebarEl = document.querySelector(".sidebar");
+  const backdropEl = document.getElementById("sidebar-backdrop");
+  const burger = document.getElementById("mobile-hamburger-btn");
+  if (sidebarEl) sidebarEl.classList.remove("visible");
+  if (backdropEl) {
+    backdropEl.classList.remove("visible");
+    backdropEl.style.display = "none";
+  }
+  if (burger) burger.setAttribute("aria-expanded", "false");
+}
+
 function handleRouting() {
   const path = window.location.pathname;
   const targetView = routeMap[path] || "landing";
@@ -106,24 +118,39 @@ function handleRouting() {
 
 // Navigation / View Router
 function showView(viewName) {
+  closeWorkspaceDrawer();
+  const landingView = $("#landing-view");
+  const authView = $("#auth-view");
+  const appShell = $("#app-shell");
+  document.body.dataset.careoneView = viewName === "landing" ? "landing" : viewName === "auth" ? "auth" : "workspace";
+
   if (viewName === "landing") {
-    $("#landing-view").classList.remove("hidden");
-    $("#auth-view").classList.add("hidden");
-    $("#app-shell").classList.add("hidden");
+    landingView.classList.remove("hidden");
+    authView.classList.add("hidden");
+    appShell.classList.add("hidden");
+    landingView.setAttribute("aria-hidden", "false");
+    authView.setAttribute("aria-hidden", "true");
+    appShell.setAttribute("aria-hidden", "true");
     return;
   }
   
   if (viewName === "auth") {
-    $("#landing-view").classList.add("hidden");
-    $("#auth-view").classList.remove("hidden");
-    $("#app-shell").classList.add("hidden");
+    landingView.classList.add("hidden");
+    authView.classList.remove("hidden");
+    appShell.classList.add("hidden");
+    landingView.setAttribute("aria-hidden", "true");
+    authView.setAttribute("aria-hidden", "false");
+    appShell.setAttribute("aria-hidden", "true");
     return;
   }
 
   // Workspace app-shell
-  $("#landing-view").classList.add("hidden");
-  $("#auth-view").classList.add("hidden");
-  $("#app-shell").classList.remove("hidden");
+  landingView.classList.add("hidden");
+  authView.classList.add("hidden");
+  appShell.classList.remove("hidden");
+  landingView.setAttribute("aria-hidden", "true");
+  authView.setAttribute("aria-hidden", "true");
+  appShell.setAttribute("aria-hidden", "false");
 
   // Toggle active nav menu items
   $$(".nav-item").forEach((item) => {
@@ -2089,30 +2116,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const backdropEl = document.getElementById("sidebar-backdrop");
 
   if (burger && sidebarEl && backdropEl) {
-    const closeWorkspaceMenu = () => {
-      sidebarEl.classList.remove("visible");
-      backdropEl.classList.remove("visible");
-      backdropEl.style.display = "none";
-      burger.setAttribute("aria-expanded", "false");
-    };
     burger.addEventListener("click", () => {
       sidebarEl.classList.add("visible");
       backdropEl.classList.add("visible");
       backdropEl.style.display = "block";
       burger.setAttribute("aria-expanded", "true");
     });
-    backdropEl.addEventListener("click", closeWorkspaceMenu);
+    backdropEl.addEventListener("click", closeWorkspaceDrawer);
     // Close on any tab link click
     document.querySelectorAll(".sidebar .nav-item").forEach(item => {
-      item.addEventListener("click", closeWorkspaceMenu);
+      item.addEventListener("click", closeWorkspaceDrawer);
     });
     // Close on logout click
     const logoutBtn = document.getElementById("btn-logout");
     if (logoutBtn) {
-      logoutBtn.addEventListener("click", closeWorkspaceMenu);
+      logoutBtn.addEventListener("click", closeWorkspaceDrawer);
     }
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeWorkspaceMenu();
+      if (event.key === "Escape") closeWorkspaceDrawer();
     });
   }
 

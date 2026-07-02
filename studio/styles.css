@@ -2917,7 +2917,6 @@ h2 {
   button, .primary, .secondary, .manage-patient-btn, .auth-submit-btn {
     min-height: 48px !important;
     font-size: 14px !important;
-    width: 100% !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2980,6 +2979,19 @@ html {
 body {
   overflow-x: hidden;
   line-height: 1.55;
+}
+
+body[data-careone-view="landing"] #auth-view,
+body[data-careone-view="landing"] #app-shell,
+body[data-careone-view="auth"] #landing-view,
+body[data-careone-view="auth"] #app-shell,
+body[data-careone-view="workspace"] #landing-view,
+body[data-careone-view="workspace"] #auth-view {
+  display: none !important;
+}
+
+body[data-careone-view="workspace"] #app-shell {
+  display: grid !important;
 }
 
 img, svg, canvas, video {
@@ -3451,16 +3463,88 @@ dialog > pre,
     min-width: 0;
   }
 
+  body[data-careone-view="workspace"] {
+    background: var(--bg);
+  }
+
+  body[data-careone-view="workspace"] #app-shell {
+    display: block !important;
+    min-height: 100dvh;
+  }
+
   .mobile-header {
     display: flex !important;
     height: 58px;
     padding: 0 14px;
+    position: fixed !important;
+    inset: 0 0 auto 0;
+    z-index: 950;
+    background: rgba(251, 250, 245, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(31, 40, 32, 0.06);
+  }
+
+  body.dark-theme .mobile-header {
+    background: rgba(28, 35, 30, 0.96);
+  }
+
+  .mobile-brand-lockup {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .mobile-brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: var(--brand);
+    color: #fff;
+    flex: 0 0 auto;
+  }
+
+  .mobile-brand-lockup strong {
+    display: block;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.1;
+  }
+
+  .mobile-brand-lockup span:not(.mobile-brand-mark) {
+    display: block;
+    color: var(--secondary);
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .mobile-brand-title {
+    display: none;
   }
 
   .mobile-menu-trigger {
     display: inline-flex !important;
     width: 44px;
     height: 44px;
+    flex: 0 0 auto;
+    background: var(--surface);
+  }
+
+  .mobile-menu-bars {
+    width: 18px;
+    display: grid;
+    gap: 4px;
+  }
+
+  .mobile-menu-bars span {
+    display: block;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--brand);
   }
 
   .sidebar {
@@ -3482,7 +3566,7 @@ dialog > pre,
 
   .main {
     width: 100%;
-    padding: 14px 12px 26px !important;
+    padding: 74px 12px 26px !important;
     min-width: 0;
   }
 
@@ -3505,6 +3589,17 @@ dialog > pre,
   .top-actions select,
   .hub-header button {
     width: 100% !important;
+  }
+
+  .hub-header {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+
+  .hub-header .eyebrow,
+  .topbar .eyebrow {
+    letter-spacing: .08em;
   }
 
   .patient-grid,
@@ -3558,6 +3653,29 @@ dialog > pre,
 
   .patient-stats-row {
     grid-template-columns: 1fr !important;
+  }
+
+  .patient-card-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .patient-card-header h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.2;
+  }
+
+  .patient-relation,
+  .patient-card-body {
+    line-height: 1.45;
+  }
+
+  .example-query-pill,
+  #notifications-filter-bar button {
+    width: auto !important;
+    min-height: 40px !important;
+    flex: 1 1 auto;
+    white-space: normal;
   }
 
   .manage-patient-btn,
@@ -3701,6 +3819,11 @@ dialog > pre,
   #notifications-filter-bar {
     display: grid !important;
     grid-template-columns: 1fr;
+  }
+
+  .final-cta-actions,
+  .final-cta-actions button {
+    width: 100%;
   }
 }
 
