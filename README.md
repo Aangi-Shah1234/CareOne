@@ -19,7 +19,6 @@ CareOne transforms unstructured caregiver notes into structured patient insights
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Running the Project](#running-the-project)
-- [Screenshots](#screenshots)
 - [Future Enhancements](#future-enhancements)
 - [Author](#author)
 
@@ -189,8 +188,6 @@ CareOne
 │   ├── styles.css        # Responsive dark/light theme stylesheet definitions
 │   └── app.js            # Frontend state, API requests, and router logic
 │
-├── docs/                 # Documentation assets and screenshots
-│
 ├── data/                 # Local encrypted JSON fallback database files
 │
 ├── web_app.py            # FastAPI SaaS web application server
@@ -273,20 +270,6 @@ Run the Interactive Sandbox.
 ```bash
 python app.py
 ```
-
----
-
-# Screenshots
-
-Add screenshots after deployment.
-
-- Landing Page
-- Authentication
-- Dashboard
-- AI Pipeline
-- Interactive Sandbox
-- Patient Management
-- Analytics
 
 ---
 
