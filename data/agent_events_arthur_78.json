@@ -720,6 +720,69 @@
       "agent_name": "Refusal Agent",
       "action": "Blocked: dosage recommendation request \u2014 out of scope",
       "timestamp": "09:28"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 3 care activities from raw text",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Vitals Agent",
+      "action": "Blood Pressure 145/92 logged \u2014 status: High/Alert",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Refusal Agent",
+      "action": "Refusal intervention strategy generated for Morning Walk",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Risk Agent",
+      "action": "Safety risk calculated: Medium",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Trends Agent",
+      "action": "BP systolic 7-day avg 138 mmHg \u2014 upward trend analyzed",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "09:32"
+    },
+    {
+      "patient_id": "arthur_78",
+      "date": "2026-07-03",
+      "agent_name": "Refusal Agent",
+      "action": "Blocked: dosage recommendation request \u2014 out of scope",
+      "timestamp": "09:32"
     }
   ]
 }

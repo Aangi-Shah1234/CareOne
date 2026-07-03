@@ -423,8 +423,11 @@ function renderState() {
   const riskLvl = risk.risk_level || "Low";
   $("#risk-level").textContent = riskLvl;
   $("#risk-description").textContent = risk.description || "Overall safety parameters are stable.";
-  const confidenceVal = (risk.confidence_score !== undefined) ? risk.confidence_score : 0.9;
-  $("#risk-confidence").textContent = `${Math.round(confidenceVal * 100)}%`;
+  if (risk.confidence_score !== undefined) {
+    $("#risk-confidence").textContent = `${Math.round(risk.confidence_score * 100)}%`;
+  } else {
+    $("#risk-confidence").textContent = "N/A";
+  }
   
   const fill = $("#risk-meter-fill");
   if (fill) {
