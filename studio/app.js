@@ -423,7 +423,8 @@ function renderState() {
   const riskLvl = risk.risk_level || "Low";
   $("#risk-level").textContent = riskLvl;
   $("#risk-description").textContent = risk.description || "Overall safety parameters are stable.";
-  $("#risk-confidence").textContent = `${Math.round((risk.confidence || 0.9) * 100)}%`;
+  const confidenceVal = (risk.confidence_score !== undefined) ? risk.confidence_score : 0.9;
+  $("#risk-confidence").textContent = `${Math.round(confidenceVal * 100)}%`;
   
   const fill = $("#risk-meter-fill");
   if (fill) {
