@@ -56,7 +56,7 @@ class BaseAgent:
             return self._fallback_parse(prompt)
         if self.name == "VitalsAgent":
             return self._fallback_vitals(prompt)
-        if self.name == "ReconciliationAgent":
+        if self.name in ["ReconciliationAgent", "ReconcilerAgent"]:
             return self._fallback_reconcile(prompt)
         if self.name == "RefusalAgent":
             if "dosage" in prompt.lower() or "diagnosis" in prompt.lower() or "medical advice" in prompt.lower():
@@ -185,8 +185,13 @@ class BaseAgent:
 
     def _fallback_reconcile(self, prompt: str) -> dict:
         blocks = self._extract_json_blocks(prompt)
-        existing = blocks[0] if len(blocks) > 0 and isinstance(blocks[0], list) else []
-        new = blocks[1] if len(blocks) > 1 and isinstance(blocks[1], list) else []
+        lists = [
+            b for b in blocks 
+            if isinstance(b, list) 
+            and all(isinstance(item, dict) and "activity" in item for item in b)
+        ]
+        existing = lists[0] if len(lists) > 0 else []
+        new = lists[1] if len(lists) > 1 else []
         merged = []
         conflicts = []
 
