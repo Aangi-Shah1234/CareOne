@@ -63,9 +63,11 @@ def sanitize_input(text: str) -> str:
     if not text:
         return ""
         
+    import re
     # Remove HTML script tags
     cleaned = text
     cleaned = cleaned.replace("<script>", "").replace("</script>", "")
+    cleaned = re.sub(r' +', ' ', cleaned).strip()
     
     # Prompt injection mitigation phrases
     injection_phrases = [
