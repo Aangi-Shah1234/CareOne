@@ -21,6 +21,7 @@ from src.agents.gap_detector import GapDetectorAgent
 from src.agents.trend_agent import TrendAgent
 from src.agents.summary_agent import SummaryAgent
 from src.agents.risk_agent import RiskAgent
+from src.security import sanitize_input, log_security_event
 
 def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = None, raw_note: str = None) -> tuple[dict, dict]:
     """
@@ -35,6 +36,10 @@ def run_careone_pipeline(patient_id: str, date_str: str, caregiver_name: str = N
     8. Trend Analysis Agent (reads past 7 days)
     9. Care Summary Agent
     """
+    if raw_note:
+        raw_note = sanitize_input(raw_note)
+    if caregiver_name:
+        caregiver_name = sanitize_input(caregiver_name)
     # Initialize agents
     parser = ParserAgent()
     vitals_agent = VitalsAgent()

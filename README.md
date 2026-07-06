@@ -162,7 +162,11 @@ CareOne follows a modular AI architecture where each specialized agent performs 
 
 ## Security
 
-- Fernet Encryption
+- **Symmetric PHI Encryption**: Symmetrically encrypts raw caregiver notes and physiological vitals in transit and at rest in MongoDB Atlas using AES-256 Fernet cryptography.
+- **Immutable Security Audit Log**: Automatically logs all user logins, database requests, and care updates in a secure audit collection (`db.security_audit_log` or local JSON backup).
+- **Secure Password Hashing**: Hashing user passwords with SHA-256 prior to database persistence.
+- **Input Sanitization & Injection Shield**: Mitigates Cross-Site Scripting (XSS) by stripping HTML script tags, and sanitizes common prompt injection phrases (e.g. "ignore previous instructions") to shield the Gemini API pipeline.
+- **Resilient Fallback Mode**: Automatically fail-safes to encrypted local JSON files during database or internet outages to protect operational continuity.
 
 ## Deployment
 

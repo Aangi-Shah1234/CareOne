@@ -1,3 +1,88 @@
 {
-  "events": []
+  "events": [
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Parser Agent",
+      "action": "Extracted 0 care activities from raw text",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Reconciler Agent",
+      "action": "Merged caregiver logs \u2014 no contradictions found",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Breakfast unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Morning Medications unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Lunch unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Afternoon Hydration unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Evening Walk unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Dinner unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Gaps Agent",
+      "action": "Evening Medications unconfirmed \u2014 alert raised",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Risk Agent",
+      "action": "Safety risk calculated: Medium",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Trends Agent",
+      "action": "BP systolic 7-day avg 140 mmHg \u2014 stable trend analyzed",
+      "timestamp": "19:44"
+    },
+    {
+      "patient_id": "ananya_78",
+      "date": "2026-07-06",
+      "agent_name": "Summary Agent",
+      "action": "Daily care brief and safety warnings generated",
+      "timestamp": "19:44"
+    }
+  ]
 }
