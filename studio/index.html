@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CareOne - Multi-Agent Eldercare Coordination Hub</title>
-    <link rel="stylesheet" href="/static/styles.css?v=17" />
+    <link rel="stylesheet" href="/static/styles.css?v=18" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   </head>
   <body>
@@ -979,20 +979,23 @@
                 <label>Username
                   <input id="profile-username" readonly disabled style="opacity: 0.6; background: var(--surface-2);" />
                 </label>
-                <label>Email Address
-                  <input id="profile-email" type="email" placeholder="nurse.sarah@careone.org" value="caregiver@careone.org" required />
-                </label>
-                <label>Organization / Medical Clinic
-                  <input id="profile-org" placeholder="e.g. Seattle Senior Health" value="Seattle Senior Health" required />
-                </label>
-                <label>Clinical Role
-                  <select id="profile-role" required>
-                    <option value="Lead Nurse">Lead Nurse</option>
-                    <option value="Assisting Caregiver">Assisting Caregiver</option>
-                    <option value="Primary Physician">Primary Physician</option>
-                    <option value="Family Member">Family Member</option>
-                  </select>
-                </label>
+                 <label>Email Address
+                   <input id="profile-email" type="email" placeholder="e.g. caregiver@careone.org" />
+                 </label>
+                 <label>Organization / Medical Clinic
+                   <input id="profile-org" placeholder="e.g. Seattle Senior Health" />
+                 </label>
+                 <label>Clinical Role / Relationship
+                   <select id="profile-role">
+                     <option value="Family Caregiver">Family Caregiver</option>
+                     <option value="Professional">Professional Caregiver</option>
+                     <option value="Care Coordinator">Care Coordinator</option>
+                     <option value="Lead Nurse">Lead Nurse</option>
+                     <option value="Assisting Caregiver">Assisting Caregiver</option>
+                     <option value="Primary Physician">Primary Physician</option>
+                     <option value="Family Member">Family Member</option>
+                   </select>
+                 </label>
 
                 <!-- Change Password -->
                 <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px;">
@@ -1084,6 +1087,6 @@
       </div>
     </dialog>
 
-    <script src="/static/app.js?v=17"></script>
+    <script src="/static/app.js?v=18"></script>
   </body>
 </html>

@@ -1594,9 +1594,9 @@ function loadProfile() {
   $("#profile-avatar-placeholder").textContent = displayName.charAt(0).toUpperCase() || "U";
   
   // Optional expanded fields
-  $("#profile-email").value = state.user.email || "nurse.sarah@careone.org";
-  $("#profile-org").value = state.user.org || "Seattle Senior Health";
-  $("#profile-bio").value = state.user.bio || "Clinical coordinator overseeing Ananya's daily operations.";
+  $("#profile-email").value = state.user.email || "";
+  $("#profile-org").value = state.user.org || "";
+  $("#profile-bio").value = state.user.bio || "";
   $("#profile-new-pass").value = "";
 
   setMessage("#profile-edit-message", "");
